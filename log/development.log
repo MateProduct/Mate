@@ -1,0 +1,109 @@
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-29 17:49:27 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (130.3ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1889ms (Views: 1888.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2022-10-29 17:49:34 -0400
+Processing by MoviesController#profile as HTML
+  Rendered movies/profile.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 381ms (Views: 381.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-29 17:49:40 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 610ms (Views: 408.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2022-10-29 17:49:42 -0400
+Processing by MoviesController#profile as HTML
+  Rendered movies/profile.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 406ms (Views: 405.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2022-10-29 17:50:06 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2olWZpwwzo2Rt2OjZ1zWrQtZPwnEr907M5Spojavvz62T7KgVs8J0U/X7HKWBA/eFDysSijmeb0zlU08Z31DBw==", "user"=>{"uni"=>"ab1200", "lionmail"=>"", "phone"=>"1234561789", "contact"=>"", "time_slot"=>"Tuesday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'ab1200' LIMIT 1
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "users" ("uni", "lionmail", "phone", "contact", "time_slot", "description", "skills", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "ab1200"], ["lionmail", ""], ["phone", "1234561789"], ["contact", ""], ["time_slot", "Tuesday"], ["description", ""], ["skills", ""], ["created_at", "2022-10-29 21:50:06.573740"], ["updated_at", "2022-10-29 21:50:06.573740"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36mUser Exists (2.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'ab1200' AND "users"."uni" != 'ab1200') LIMIT 1[0m
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 38.6ms)
+
+NameError (undefined local variable or method `signin_path' for #<MoviesController:0x00007f72761a7eb8>
+Did you mean?  signup_path):
+  app/controllers/movies_controller.rb:28:in `create'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.6ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.3ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2022-10-29 18:00:18 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2olWZpwwzo2Rt2OjZ1zWrQtZPwnEr907M5Spojavvz62T7KgVs8J0U/X7HKWBA/eFDysSijmeb0zlU08Z31DBw==", "user"=>{"uni"=>"ab1200", "lionmail"=>"", "phone"=>"1234561789", "contact"=>"", "time_slot"=>"Tuesday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'ab1200' LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Exists (2.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'ab1200' LIMIT 1
+  Rendered movies/signup.erb within layouts/application (120.6ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1448ms (Views: 1106.4ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-29 18:00:41 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-29 18:00:41 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 353ms (Views: 307.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-29 18:00:53 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-29 18:00:53 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 310ms (Views: 310.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-29 18:00:58 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 368ms (Views: 368.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2022-10-29 18:04:13 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i6dfNrqkjGWiD0xTYcBPz2MgkPprBQ2AQxErv9vbmi7nYbvwcFtLOXxvw4KQmJa8fEUDuYdMqQZDEM8higlmFw==", "user"=>{"uni"=>"qq1000", "password"=>"[FILTERED]", "uname"=>"qq1000"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (2.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'qq1000' LIMIT 1
+  [1m[36mSQL (4.3ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "qq1000"], ["password", "123456"], ["uname", "qq1000"], ["created_at", "2022-10-29 22:04:13.656213"], ["updated_at", "2022-10-29 22:04:13.656213"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36mUser Exists (2.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'qq1000' AND "users"."uni" != 'qq1000') LIMIT 1[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 17.0ms)
+
+NameError (undefined local variable or method `signin_path' for #<MoviesController:0x00007f7900063a80>
+Did you mean?  signup_path):
+  app/controllers/movies_controller.rb:28:in `create'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (9.0ms)
