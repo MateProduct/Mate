@@ -14,10 +14,29 @@ class MoviesController < ApplicationController
     # default: render 'new' template
   end
 
-  def create
-    @movie = Movie.create!(movie_params)
-    flash[:notice] = "#{@movie.title} was successfully created."
-    redirect_to movies_path
+  # def create
+  #   @movie = Movie.create!(movie_params)
+  #   flash[:notice] = "#{@movie.title} was successfully created."
+  #   redirect_to movies_path
+  # end
+
+  def signup
+  end
+
+  def signin
+  end
+
+  def create#_user
+    # @user = Users.create!(user_params)
+    @user = User.create(user_params) #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
+    if @user.valid?
+      flash[:notice] = "#{@user.uni} was successfully created."
+      redirect_to signin_path
+    else
+      flash[:warning] = "Account creation failed. Please check if UNI is already registered."
+      render :action => 'signup'
+    end
+
   end
 
   def edit
@@ -43,5 +62,9 @@ class MoviesController < ApplicationController
   # This helps make clear which methods respond to requests, and which ones do not.
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date)
+  end
+
+  def user_params
+    params.require(:user).permit(:uni, :password, :uname)
   end
 end
