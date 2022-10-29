@@ -14,12 +14,6 @@ class MoviesController < ApplicationController
     # default: render 'new' template
   end
 
-  # def create
-  #   @movie = Movie.create!(movie_params)
-  #   flash[:notice] = "#{@movie.title} was successfully created."
-  #   redirect_to movies_path
-  # end
-
   def signup
   end
 
@@ -65,6 +59,6 @@ class MoviesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:uni, :password, :uname)
+    params.require(:user).permit(:uni, :password, :uname, :lionmail, :phone, :contact, :time_slot, :description, :skills)
   end
 end

@@ -1,12 +1,47 @@
 <h2>Create New Movie</h2>
 
-<%= form_tag movies_path, :class => 'form' do %>
-  <%= label :movie, :title, 'Title', :class => 'col-form-label' %>
-  <%= text_field :movie, :title, :class => 'form-control' %>
-  <%= label :movie, :rating, 'Rating', :class => 'col-form-label'  %>
-  <%= select :movie, :rating, ['G','PG','PG-13','R','NC-17'], {}, {:class => 'form-control col-1'} %>
-  <%= label :movie, :release_date, 'Released On', :class => 'col-form-label'  %>
-  <%= date_select :movie, :release_date, {}, :class => 'form-control col-2 d-inline' %>
+<%= form_tag movies_path, :class => 'put' do %>
+  <%= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+  <%= text_field :user, :uni, :class => 'form-control' %>
+  <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
+  <%= text_field :user, :lionmail, :class => 'form-control' %>
+  <%= label :user, :phone, 'Phone', :class => 'col-form-label' %>
+  <%= text_field :user, :phone, :class => 'form-control' %>
+  <%= label :user, :contact, 'Contact', :class => 'col-form-label' %>
+  <%= text_field :user, :contact, :class => 'form-control' %>
+  <%= label :user, :time_slot, 'Available time slot', :class => 'col-form-label'  %>
+  <%#= form_tag movie_path, :method => 'get' do %>
+<!--    <div class="checkbox">-->
+<!--      <td>-->
+        <%#= label_tag(:time1, "Monday") %>
+        <%#= check_box 'time1', 'result', {}, 1, 0 %>
+
+        <%#= label_tag(:time2, "Tuesday") %>
+        <%#= check_box 'time2', 'result', {}, 1, 0 %>
+
+        <%#= label_tag(:time3, "Wednesday") %>
+        <%#= check_box 'time3', 'result', {}, 1, 0 %>
+
+        <%#= label_tag(:time4, "Thursday") %>
+        <%#= check_box 'time4', 'result', {}, 1, 0 %>
+
+        <%#= label_tag(:time5, "Friday") %>
+        <%#= check_box 'time5', 'result', {}, 1, 0 %>
+
+        <%#= label_tag(:time6, "Saturday") %>
+        <%#= check_box 'time6', 'result', {}, 1, 0 %>
+
+        <%#= label_tag(:time7, "Sunday") %>
+        <%#= check_box 'time7', 'result', {}, 1, 0 %>
+<!--      </td>-->
+<!--    </div>-->
+  <%# end %>
+  <%= select :user, :time_slot, ['Monday','Tuesday','Wednesday','Thursday','Friday', 'Saturday', 'Sunday'], {}, {:class => 'form-control col-2'} %>
+  <%#= select :movie, :time_slot, ['Morning', 'Afternoon', 'Evening'], {}, {:class => 'form-control col-2'} %>
+  <%= label :user, :description, 'About Me', :class => 'col-form-label' %>
+  <%= text_field :user, :description, :class => 'form-control' %>
+  <%= label :user, :skills, 'Skills', :class => 'col-form-label' %>
+  <%= text_field :user, :skills, :class => 'form-control' %>
   <br/>
   <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
   <%= link_to 'Cancel', movies_path, :class => 'btn btn-secondary' %>
