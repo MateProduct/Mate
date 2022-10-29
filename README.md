@@ -18,4 +18,25 @@ Then followed normal steps to update schema
 - [ ] Show error message use @user.errors on signup if user already exists <a href="https://stackoverflow.com/a/23975918/19843708">StackOverflow</a>
 - [ ] Write Cucumber
 - [ ] Write Rspec tests
+
+
+</details>
+
+<details open>
+<summary>Profile</summary>
+
+#### Done
+* Added six attributes to the Users table in database. (Run below six times)
+```
+ $ rails g model AddLionmailToUser lionmail:string
+ $ bundle exec rake db:migrate                                      
+```
+* Created a profile page
+
+#### To DO:
+- [ ] Get User Id and use Update method to update user attributes in the database
+- [ ] Write Cucumber
+- [ ] Write Rspec tests
+
+
 </details>
