@@ -15,9 +15,45 @@ class MoviesController < ApplicationController
   end
 
   def signup
+
   end
 
   def signin
+    print("signin")
+    #uni = user_params[:uni]
+    # password = user_params[:password]
+    # @user = User.find(uni)
+    # if @user
+    #   if password == @user.password
+    #
+    #   end
+    # else
+    #
+    # end
+  end
+  def checkpwd
+    uni = user_params[:uni]
+    password = user_params[:password]
+
+    @user = User.find(uni)
+    if @user.valid?
+      if password == @user.password
+          redirect_to profile_path(@user)
+      else
+        flash[:notice] = "Invalid password. Please try again."
+        redirect_to signin_path
+      end
+    else
+      flash[:notice] = "#{uni} hasn't been signup. Please signup first"
+        redirect_to signup_path
+    end
+    # if @user
+    #   if password == @user.password
+    #
+    #   end
+    # else
+    #
+    # end
   end
 
   def create#_user
@@ -61,4 +97,5 @@ class MoviesController < ApplicationController
   def user_params
     params.require(:user).permit(:uni, :password, :uname, :lionmail, :phone, :contact, :time_slot, :description, :skills)
   end
+
 end

@@ -4,4 +4,6 @@ Rottenpotatoes::Application.routes.draw do
   root :to => redirect('/movies')
   get "/signup", to:"movies#signup"
   get "/profile", to:"movies#profile"
+  post "/signin", to:"movies#checkpwd"
+  get "/signin", to:"movies#signin"
 end

@@ -1,11 +1,11 @@
 <h2>Sign in to an account</h2>
 
-<%= form_tag signin_path, :class => 'form' do %>
+<%= form_tag  signin_path, :class => 'form' do %>
   <%= label :user, :uni, 'UNI', :class => 'col-form-label' %>
   <%= text_field :user, :uni, :class => 'form-control  col-2' %>
   <%= label :user, :password, 'Password', :class => 'col-form-label'  %>
   <%= password_field :user, :password, :class => 'form-control col-2' %>
   <br/>
   <%= submit_tag 'Sign in', :class => 'btn btn-primary' %>
-  <%= link_to 'Cancel', signin_path, :class => 'btn btn-secondary' %>
+  <%= link_to 'Cancel', movies_path, :class => 'btn btn-secondary' %>
 <% end %>

@@ -2,6 +2,20 @@
 <details open>
 <summary>Signup - Jiawen</summary>
 
+## Uni
+
+lx2301 Lei Xu
+## How to run this program
+
+```
+ $ bundle
+ $ bundle exec rake db:migrate                                      
+ $ rails server
+```
+
+## Progress Log
+
+
 #### Done
 * Created a Users table in database using migration (new file "_create_users.rb" created in /db/migrate and I added few lines into it).
 Then followed normal steps to update schema
