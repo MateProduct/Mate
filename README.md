@@ -15,6 +15,8 @@ lx2301 Lei Xu
 
 ## Progress Log
 
+<details open>
+<summary>User Sign Up</summary>
 
 #### Done
 * Created a Users table in database using migration (new file "_create_users.rb" created in /db/migrate and I added few lines into it).
@@ -30,6 +32,19 @@ Then followed normal steps to update schema
 #### To DO:
 - [ ] Password validation (confirm your password)
 - [ ] Show error message use @user.errors on signup if user already exists <a href="https://stackoverflow.com/a/23975918/19843708">StackOverflow</a>
+- [ ] Write Cucumber
+- [ ] Write Rspec tests
+
+
+</details>
+
+<details open>
+<summary>User Sign In</summary>
+
+#### Done
+* Completed user signin funtion and password verification
+
+#### To DO:
 - [ ] Write Cucumber
 - [ ] Write Rspec tests
 
