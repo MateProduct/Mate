@@ -11,3 +11,5 @@ rottenpotatoes/vendor/bundle
 
 tmp/cache/assets/sprockets/v3.0
 tmp/cache/assets/sprockets/v3.0
+log/development.log
+tmp/pids
