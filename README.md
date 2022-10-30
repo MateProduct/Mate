@@ -1,7 +1,5 @@
 
 <details open>
-<summary>Signup - Jiawen</summary>
-
 ## Uni
 
 lx2301 Lei Xu
@@ -14,15 +12,16 @@ lx2301 Lei Xu
 ```
 
 ## Progress Log
+</details>
 
 <details open>
-<summary>User Sign Up</summary>
+<summary>Signup - Jiawen</summary>
 
 #### Done
 * Created a Users table in database using migration (new file "_create_users.rb" created in /db/migrate and I added few lines into it).
 Then followed normal steps to update schema
 ```
- $ rails g model User uni:string:index password:string uname:string
+ $ rails g model User uni:string:index password:string uname:string (only run once)
  $ bundle exec rake db:migrate                                      
  $ rails server
 ```
@@ -55,7 +54,11 @@ Then followed normal steps to update schema
 <summary>Profile</summary>
 
 #### Done
-* Added six attributes to the Users table in database. (Run below six times)
+* Added six attributes to the Users table in database. (Run below six times and only run once) After the table is successfully built, it should not be run.
+* Get User Id and use Update method to update user attributes in the database
+* Create Course page and Profile page
+* Link all pages together
+* Write and Pass Cucumber test
 ```
  $ rails g model AddLionmailToUser lionmail:string
  $ bundle exec rake db:migrate                                      
@@ -63,9 +66,7 @@ Then followed normal steps to update schema
 * Created a profile page
 
 #### To DO:
-- [ ] Get User Id and use Update method to update user attributes in the database
-- [ ] Write Cucumber
-- [ ] Write Rspec tests
-
-
+- [ ] Write Rspec test
+- [ ] Possible change the uni
+- [ ] Possible do the checkbox rather than selection
 </details>

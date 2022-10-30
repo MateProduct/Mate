@@ -1,0 +1,332 @@
+  [1m[36mActiveRecord::SchemaMigration Load (3.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (3.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20221030141048)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uni" varchar, "password" varchar, "uname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 21:45:26.798186"], ["updated_at", "2022-10-30 21:45:26.798186"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 21:45:26.805320"], ["updated_at", "2022-10-30 21:45:26.805320"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (6.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 21:46:47.615064"], ["updated_at", "2022-10-30 21:46:47.615064"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 21:46:47.621655"], ["updated_at", "2022-10-30 21:46:47.621655"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 17:46:47 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (16.5ms)
+  Rendered layouts/_flash.erb (26.9ms)
+Completed 200 OK in 1466ms (Views: 1401.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (8.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 21:49:09.711254"], ["updated_at", "2022-10-30 21:49:09.711254"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 21:49:09.718284"], ["updated_at", "2022-10-30 21:49:09.718284"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 17:49:09 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (16.3ms)
+  Rendered layouts/_flash.erb (33.0ms)
+Completed 200 OK in 810ms (Views: 743.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (7.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 21:51:32.235834"], ["updated_at", "2022-10-30 21:51:32.235834"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 21:51:32.242461"], ["updated_at", "2022-10-30 21:51:32.242461"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 17:51:32 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (16.9ms)
+  Rendered layouts/_flash.erb (33.0ms)
+Completed 200 OK in 803ms (Views: 738.5ms | ActiveRecord: 0.1ms)
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 17:51:33 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (97.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 158ms (Views: 158.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (6.9ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 21:53:00.336698"], ["updated_at", "2022-10-30 21:53:00.336698"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 21:53:00.344462"], ["updated_at", "2022-10-30 21:53:00.344462"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 17:53:00 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (17.3ms)
+  Rendered layouts/_flash.erb (35.1ms)
+Completed 200 OK in 822ms (Views: 754.4ms | ActiveRecord: 0.1ms)
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 17:53:01 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (101.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 167ms (Views: 166.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (6.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 21:59:02.510891"], ["updated_at", "2022-10-30 21:59:02.510891"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 21:59:02.517906"], ["updated_at", "2022-10-30 21:59:02.517906"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 17:59:02 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (17.5ms)
+  Rendered layouts/_flash.erb (35.8ms)
+Completed 200 OK in 836ms (Views: 768.9ms | ActiveRecord: 0.1ms)
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 17:59:03 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (101.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 163ms (Views: 163.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (6.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 21:59:58.072957"], ["updated_at", "2022-10-30 21:59:58.072957"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 21:59:58.078936"], ["updated_at", "2022-10-30 21:59:58.078936"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 17:59:58 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (14.8ms)
+  Rendered layouts/_flash.erb (26.7ms)
+Completed 200 OK in 676ms (Views: 623.7ms | ActiveRecord: 0.1ms)
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 17:59:58 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (81.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 135ms (Views: 134.4ms | ActiveRecord: 0.0ms)
+Started PUT "/profile/aa1000" for 127.0.0.1 at 2022-10-30 17:59:59 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Tuesday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"aa1000"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "lionmail" = ?, "phone" = ?, "contact" = ?, "time_slot" = ?, "description" = ?, "skills" = ?, "updated_at" = ? WHERE "users"."uni" = ?[0m  [["lionmail", ""], ["phone", ""], ["contact", ""], ["time_slot", "Tuesday"], ["description", ""], ["skills", ""], ["updated_at", "2022-10-30 21:59:59.039550"], ["uni", "aa1000"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/course/aa1000
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 17:59:59 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (5.9ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (3.5ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 22:04:03.982192"], ["updated_at", "2022-10-30 22:04:03.982192"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 22:04:03.988394"], ["updated_at", "2022-10-30 22:04:03.988394"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 18:04:03 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (13.6ms)
+  Rendered layouts/_flash.erb (29.6ms)
+Completed 200 OK in 667ms (Views: 616.5ms | ActiveRecord: 0.1ms)
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 18:04:04 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (78.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 130ms (Views: 129.7ms | ActiveRecord: 0.0ms)
+Started PUT "/profile/aa1000" for 127.0.0.1 at 2022-10-30 18:04:04 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Tuesday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"aa1000"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "lionmail" = ?, "phone" = ?, "contact" = ?, "time_slot" = ?, "description" = ?, "skills" = ?, "updated_at" = ? WHERE "users"."uni" = ?[0m  [["lionmail", ""], ["phone", ""], ["contact", ""], ["time_slot", "Tuesday"], ["description", ""], ["skills", ""], ["updated_at", "2022-10-30 22:04:04.934566"], ["uni", "aa1000"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/course/aa1000
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 18:04:04 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (6.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (5.5ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 22:06:16.421234"], ["updated_at", "2022-10-30 22:06:16.421234"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 22:06:16.430338"], ["updated_at", "2022-10-30 22:06:16.430338"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 18:06:16 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (18.9ms)
+  Rendered layouts/_flash.erb (34.1ms)
+Completed 200 OK in 876ms (Views: 802.4ms | ActiveRecord: 0.1ms)
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 18:06:17 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (105.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 170ms (Views: 169.4ms | ActiveRecord: 0.0ms)
+Started PUT "/profile/aa1000" for 127.0.0.1 at 2022-10-30 18:06:17 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Tuesday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"aa1000"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "lionmail" = ?, "phone" = ?, "contact" = ?, "time_slot" = ?, "description" = ?, "skills" = ?, "updated_at" = ? WHERE "users"."uni" = ?[0m  [["lionmail", ""], ["phone", ""], ["contact", ""], ["time_slot", "Tuesday"], ["description", ""], ["skills", ""], ["updated_at", "2022-10-30 22:06:17.670008"], ["uni", "aa1000"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/course/aa1000
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 18:06:17 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (8.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-30 22:07:32.099813"], ["updated_at", "2022-10-30 22:07:32.099813"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1100' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1100"], ["uname", "aa1100"], ["lionmail", "aa1100@columbia.edu"], ["time_slot", "Tuesday"], ["created_at", "2022-10-30 22:07:32.107448"], ["updated_at", "2022-10-30 22:07:32.107448"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 18:07:32 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (17.7ms)
+  Rendered layouts/_flash.erb (35.1ms)
+Completed 200 OK in 855ms (Views: 788.6ms | ActiveRecord: 0.1ms)
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 18:07:33 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (99.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 163ms (Views: 163.1ms | ActiveRecord: 0.0ms)
+Started PUT "/profile/aa1000" for 127.0.0.1 at 2022-10-30 18:07:33 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Tuesday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"aa1000"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "lionmail" = ?, "phone" = ?, "contact" = ?, "time_slot" = ?, "description" = ?, "skills" = ?, "updated_at" = ? WHERE "users"."uni" = ?[0m  [["lionmail", ""], ["phone", ""], ["contact", ""], ["time_slot", "Tuesday"], ["description", ""], ["skills", ""], ["updated_at", "2022-10-30 22:07:33.311522"], ["uni", "aa1000"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/course/aa1000
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 18:07:33 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (6.8ms)[0m  rollback transaction
