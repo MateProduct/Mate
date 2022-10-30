@@ -5,6 +5,7 @@ Rottenpotatoes::Application.routes.draw do
   get "/signup", to:"users#signup"
   get "/profile/:uni", to:"users#profile", as: :profile
   put "/profile/:uni", to:"users#update", as: :update
+  get "/course/:uni", to:"users#course", as: :course
   post "/signin", to:"users#checkpwd"
   get "/signin", to:"users#signin"
 end

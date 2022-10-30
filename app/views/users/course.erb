@@ -1,0 +1,7 @@
+<h2>Course</h2>
+
+<%= form_tag  course_path, :class => 'form' do %>
+  <%#= submit_tag 'Edit Profile', :class => 'btn btn-primary' %>
+  <%= link_to 'Edit Profile', profile_path, :class => 'btn btn-primary' %>
+  <%= link_to 'Back to HomePage', users_path, :class => 'btn btn-secondary' %>
+<% end %>

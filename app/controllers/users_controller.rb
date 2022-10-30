@@ -79,7 +79,11 @@ class UsersController < ApplicationController
     @user = User.find params[:uni]
     @user.update_attributes!(user_params)
     flash[:notice] = "#{@user.uni} was successfully updated."
-    redirect_to profile_path(@user)
+    redirect_to course_path(@user)
+  end
+
+  def course
+
   end
 
   def destroy
