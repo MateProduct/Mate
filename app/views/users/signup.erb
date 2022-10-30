@@ -3,8 +3,13 @@
 <%= form_tag users_path, :class => 'form' do %>
   <%= label :user, :uni, 'UNI', :class => 'col-form-label' %>
   <%= text_field :user, :uni, :class => 'form-control  col-2' %>
+
   <%= label :user, :password, 'Password', :class => 'col-form-label'  %>
   <%= password_field :user, :password, :class => 'form-control col-2' %>
+
+  <%= label :user, :password_confirmation, 'Confirm Password', :class => 'col-form-label'  %>
+  <%= password_field :user, :password_confirmation, :class => 'form-control col-2' %>
+
   <%= label :user, :uname, 'User Name', :class => 'col-form-label' %>
   <%= text_field :user, :uname, :class => 'form-control  col-2' %>
   <br/>

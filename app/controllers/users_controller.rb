@@ -58,12 +58,17 @@ class UsersController < ApplicationController
 
   def create#_user
     # @user = Users.create!(user_params)
+    if User.exists?(uni:params[:uni])
+      flash[:warning] = "Account creation failed. Please check if UNI is already registered."
+      render :action => 'signup'
+    end
     @user = User.create(user_params) #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
     if @user.valid?
       flash[:notice] = "#{@user.uni} was successfully created."
       redirect_to signin_path
     else
-      flash[:warning] = "Account creation failed. Please check if UNI is already registered."
+      #print("Error in create",@user.error.full_messages) #Ref:https://coursehunters.online/t/pragmaticstudio-ruby-on-rails-6-part-6/4449
+      flash[:warning] = "Account creation failed: "<< @user.errors.full_messages.join("; ")
       render :action => 'signup'
     end
 
@@ -101,7 +106,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:uni, :password, :uname, :lionmail, :phone, :contact, :time_slot, :description, :skills)
+    params.require(:user).permit(:uni, :password, :password_confirmation,:uname, :lionmail, :phone, :contact, :time_slot, :description, :skills)
   end
 
 end
