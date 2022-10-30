@@ -1,0 +1,34 @@
+<!--  app/views/users/show.html.erb -->
+<h2>Details about <em><%= @user.uname%></em></h2>
+
+<ul id="details">
+  <li>
+    UNI:
+    <%= user.uni %>
+  </li>
+  <li>
+    Lionmail:
+    <%= @user.lionmail %>
+  </li>
+  <li>
+    Phone Number:
+    <%= @user.phone %>
+  </li>
+  <li>
+    Contact:
+    <%= @user.contact %>
+  </li>
+  <li>
+    Available Time:
+    <%= @user.time_slot %>
+  </li>
+</ul>
+
+<h3>About Me:</h3>
+<p id="description">
+  <%= @user.description %>
+</p>
+
+<div class="row">
+  <%= link_to 'Back to course page', course_path, :class => 'btn btn-primary col-2' %>
+</div>

@@ -6,18 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
-    	  {:title => 'The Terminator', :rating => 'R', :release_date => '26-Oct-1984'},
-    	  {:title => 'When Harry Met Sally', :rating => 'R', :release_date => '21-Jul-1989'},
-      	  {:title => 'The Help', :rating => 'PG-13', :release_date => '10-Aug-2011'},
-      	  {:title => 'Chocolat', :rating => 'PG-13', :release_date => '5-Jan-2001'},
-      	  {:title => 'Amelie', :rating => 'R', :release_date => '25-Apr-2001'},
-      	  {:title => '2001: A Space Odyssey', :rating => 'G', :release_date => '6-Apr-1968'},
-      	  {:title => 'The Incredibles', :rating => 'PG', :release_date => '5-Nov-2004'},
-      	  {:title => 'Raiders of the Lost Ark', :rating => 'PG', :release_date => '12-Jun-1981'},
-      	  {:title => 'Chicken Run', :rating => 'G', :release_date => '21-Jun-2000'},
+users = [{:uni => 'aa1000', :password => '123456', :uname => 'aa1000', :lionmail => 'aa1000@columbia.edu', :phone => '123-456-7890', :contact => '', :time_slot => 'Monday', :description => 'Null', :skills => 'Ruby'},
+					{:uni => 'aa1100', :password => '1234567', :uname => 'aa1100', :lionmail => 'aa1100@columbia.edu', :phone => '123-654-7890', :contact => '', :time_slot => 'Monday', :description => 'Null', :skills => 'Ruby'},
+					{:uni => 'aa1200', :password => '12345', :uname => 'aa1200', :lionmail => 'aa1200@columbia.edu', :phone => '123-465-7890', :contact => '', :time_slot => 'Tuesday', :description => 'Null', :skills => 'Ruby'},
+					{:uni => 'aa1300', :password => '12345678', :uname => 'aa1300', :lionmail => 'aa1300@columbia.edu', :phone => '321-456-7890', :contact => '', :time_slot => 'Wednesday', :description => 'Null', :skills => 'Ruby'},
+					{:uni => 'aa1400', :password => '1234', :uname => 'aa1400', :lionmail => 'aa1400@columbia.edu', :phone => '121-456-7890', :contact => '', :time_slot => 'Thursday', :description => 'Null', :skills => 'Ruby'},
+					{:uni => 'aa1500', :password => '123456789', :uname => 'aa1500', :lionmail => 'aa1500@columbia.edu', :phone => '313-456-7890', :contact => '', :time_slot => 'Friday', :description => 'Null', :skills => 'Ruby'},
+					{:uni => 'aa1600', :password => '123', :uname => 'aa1600', :lionmail => 'aa1600@columbia.edu', :phone => '232-456-7890', :contact => '', :time_slot => 'Saturday', :description => 'Null', :skills => 'Ruby'},
+					{:uni => 'aa1700', :password => '1234567890', :uname => 'aa1700', :lionmail => 'aa1700@columbia.edu', :phone => '123-456-7899', :contact => '', :time_slot => 'Sunday', :description => 'Null', :skills => 'Ruby'},
   	 ]
 
-movies.each do |movie|
-  Movie.create!(movie)
+users.each do |user|
+  User.create!(user)
 end
