@@ -1705,3 +1705,1255 @@ Processing by MoviesController#profile as
   Rendered movies/profile.erb within layouts/application (6.2ms)
   Rendered layouts/_flash.erb (0.6ms)
 Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20221030141048)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uni" varchar, "password" varchar, "uname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:09:47 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:09:48 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (21.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1915ms (Views: 1729.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:09:51 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (77.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 401ms (Views: 400.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:09:53 -0400
+Processing by MoviesController#signin as HTML
+  Rendered movies/signin.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 395ms (Views: 394.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:10:00 -0400
+Processing by MoviesController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"itnfY+a0wSQeKWJRClWgGfdW0HfkQTrglgmoSWond78L5bUrt7hlxVv8dtuz4UJLq7mLKf9wHEsbSI/ETqvR0A==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile.aa1000
+Completed 302 Found in 262ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/profile.aa1000" for 127.0.0.1 at 2022-10-30 14:10:00 -0400
+Processing by MoviesController#profile as 
+  Rendered movies/profile.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1335ms (Views: 1334.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile" for 127.0.0.1 at 2022-10-30 14:10:38 -0400
+
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/ls/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /home/ls/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /home/ls/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.6ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.0ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:16:18 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:16:19 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1245ms (Views: 1064.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:16:22 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (86.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 458ms (Views: 457.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:16:26 -0400
+Processing by MoviesController#signin as HTML
+  Rendered movies/signin.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 383ms (Views: 383.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:16:33 -0400
+Processing by MoviesController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u8FC7D+xSnWOmY779gorfRUk+SDB3MgJLDHpdywWoJk6/Sikbr3ulMtMmnFPvskvScuiftrt7qKhcM76CJoG9g==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 25.0ms)
+
+NoMethodError (undefined method `profile_path' for #<MoviesController:0x00007f19e9cd1f90>
+Did you mean?  profile):
+  app/controllers/movies_controller.rb:41:in `checkpwd'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (9.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:17:35 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:17:36 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (21.9ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 1556ms (Views: 1380.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:17:38 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:17:38 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 397ms (Views: 397.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:17:40 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (84.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 465ms (Views: 464.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:17:42 -0400
+Processing by MoviesController#signin as HTML
+  Rendered movies/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 379ms (Views: 379.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:17:50 -0400
+Processing by MoviesController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E+x/xceBMaZvY16WT3QT0Gq+8SN4RgfZDY3wPyFXsaqS0BWNlo2VRyq2Shz2wPGCNlGqfWN3IXKAzNeyBdsXxQ==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 38.4ms)
+
+NoMethodError (undefined method `profile_path' for #<MoviesController:0x00007f31f02a2cf8>
+Did you mean?  profile):
+  app/controllers/movies_controller.rb:41:in `checkpwd'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:21:07 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:21:09 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1283ms (Views: 1097.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:21:13 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (88.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 465ms (Views: 465.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:21:17 -0400
+Processing by MoviesController#signin as HTML
+  Rendered movies/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 384ms (Views: 383.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:21:25 -0400
+Processing by MoviesController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5BGoiSlr1avXd655mM6sxMlYNZXMiskrfwDtAnH3J/llLcLBeGdxSpKiuvMhek6Wlbduy9e774DyQcqPVXuBlg==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 26.4ms)
+
+NoMethodError (undefined method `profile_path' for #<MoviesController:0x00007fd981ccbde0>
+Did you mean?  profile):
+  app/controllers/movies_controller.rb:41:in `checkpwd'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:22:38 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:22:39 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1283ms (Views: 1115.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:22:42 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (90.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 481ms (Views: 480.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:22:43 -0400
+Processing by MoviesController#signin as HTML
+  Rendered movies/signin.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 377ms (Views: 376.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:22:50 -0400
+Processing by MoviesController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W2tioHTrSZqMCfn9REUr2IDH4MMFlZu2trvz6lTDK3PaVwjoJefte8nc7Xf98cmK3Ci7nR6kvR07+tRncE+NHA==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile.aa1000
+Completed 302 Found in 267ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/profile.aa1000" for 127.0.0.1 at 2022-10-30 14:22:51 -0400
+Processing by MoviesController#profile as 
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  app/controllers/movies_controller.rb:75:in `profile'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:24:00 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:24:01 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1243ms (Views: 1065.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:24:04 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (87.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 477ms (Views: 477.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:24:06 -0400
+Processing by MoviesController#signin as HTML
+  Rendered movies/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 384ms (Views: 383.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:24:14 -0400
+Processing by MoviesController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8yMPudID8GyEhhw5xd9LInZ20X2rG5fAoYWYZvtx6TRyH2Xxgw9UjcFTCLN8a6lwKpmKI7AqsWssxL/r3/1PWw==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile.aa1000
+Completed 302 Found in 266ms (ActiveRecord: 24.5ms)
+
+
+Started GET "/profile.aa1000" for 127.0.0.1 at 2022-10-30 14:24:14 -0400
+Processing by MoviesController#profile as 
+  Rendered movies/profile.erb within layouts/application (16.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1340ms (Views: 1339.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile" for 127.0.0.1 at 2022-10-30 14:24:25 -0400
+
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/ls/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /home/ls/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /home/ls/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.3ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:27:00 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:27:01 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1260ms (Views: 1082.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:27:05 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (88.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 469ms (Views: 468.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:27:07 -0400
+Processing by MoviesController#signin as HTML
+  Rendered movies/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 374ms (Views: 373.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:27:13 -0400
+Processing by MoviesController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rNWztfVfaWrBKEUyeddpWsXQewdhUfK8Ofumy4WuUV0t6dn9pFPNi4T9UbjAY4sImT8gWXpg1Be0uoFGoSL3Mg==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile.aa1000
+Completed 302 Found in 206ms (ActiveRecord: 18.8ms)
+
+
+Started GET "/profile.aa1000" for 127.0.0.1 at 2022-10-30 14:27:14 -0400
+Processing by MoviesController#profile as 
+  Rendered movies/profile.erb within layouts/application (13.2ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1231ms (Views: 1230.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile" for 127.0.0.1 at 2022-10-30 14:27:24 -0400
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8FV0CT5OZbKQaIEAXWrUssCrRzqP3y++1RS6eMIKXCZxaR5Bb0LBU9W9lYrk3jbgnEQcZJTuCRVYVZ315ob6SQ==", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"hello", "skills"=>""}, "commit"=>"Save Changes"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", nil]]
+Completed 404 Not Found in 3ms (ActiveRecord: 2.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'uni'=):
+  app/controllers/movies_controller.rb:79:in `update'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:29:51 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-10-30 14:29:52 -0400
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1530ms (Views: 1351.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:29:56 -0400
+Processing by MoviesController#signup as HTML
+  Rendered movies/signup.erb within layouts/application (83.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 476ms (Views: 476.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:29:57 -0400
+Processing by MoviesController#signin as HTML
+  Rendered movies/signin.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 385ms (Views: 384.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:30:03 -0400
+Processing by MoviesController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K32Na3EpQ0AiCzWeItEjy+forJqvAwrhOBHBDWCEL4mqQecjICXnoWfeIRSbZcGZuwf3xLQyLEq1UOaARAiJ5g==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Completed 500 Internal Server Error in 280ms (ActiveRecord: 25.0ms)
+
+NoMethodError (undefined method `profile_path' for #<MoviesController:0x00007f2355cd2420>
+Did you mean?  profile):
+  app/controllers/movies_controller.rb:41:in `checkpwd'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:33:49 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:33:50 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1308ms (Views: 1119.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:33:54 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (84.7ms)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `movies_path' for #<#<Class:0x0000564121591380>:0x00007fcd09b27090>):
+    1: <h2>Sign up an account</h2>
+    2: 
+    3: <%= form_tag movies_path, :class => 'form' do %>
+    4:   <%= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+    5:   <%= text_field :user, :uni, :class => 'form-control  col-2' %>
+    6:   <%= label :user, :password, 'Password', :class => 'col-form-label'  %>
+  app/views/users/signup.erb:3:in `_app_views_users_signup_erb__2026913650809906521_70259303854140'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:35:02 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:35:03 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1266ms (Views: 1086.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:35:05 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (85.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 465ms (Views: 464.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:35:08 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 376ms (Views: 376.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:35:15 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B+pQmD8Z0RdInoOaw6/Wt6+Uivgh03zVkjLKd6zRcsKG1jrQbhV19g1LlxB6GzTl83vRpjriWn4fc+36iF3UrQ==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 18.7ms)
+
+NoMethodError (undefined method `profile_path' for #<UsersController:0x00007fbd4dd1b160>
+Did you mean?  profile):
+  app/controllers/users_controller.rb:41:in `checkpwd'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:36:03 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:36:04 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1305ms (Views: 1118.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:36:07 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (84.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 479ms (Views: 478.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:36:09 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 390ms (Views: 389.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:36:16 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vvF9B70mtmuAHptX1HtMX04Q99x7eHk7A0A0JCu4rC4/zRdP7CoSisXLj91tz64NEv+sgmBJX5COAROpDzQKQQ==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Completed 500 Internal Server Error in 267ms (ActiveRecord: 23.5ms)
+
+NoMethodError (undefined method `profile_path' for #<UsersController:0x00007fcbcdd17c20>
+Did you mean?  profile):
+  app/controllers/users_controller.rb:41:in `checkpwd'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:46:18 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:46:19 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1293ms (Views: 1108.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:46:22 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (88.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 482ms (Views: 481.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:46:23 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 402ms (Views: 401.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:46:28 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2+TqZCrabBDxh3EW5WDm5nHohEbuG9B4IayuDZK9UT9a2IAse9bI8bRSZZxc1AS0LQffGPUq9tOs7YmAtjH3UA==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/users/aa1000
+Completed 302 Found in 282ms (ActiveRecord: 25.2ms)
+
+
+Started GET "/users/aa1000" for 127.0.0.1 at 2022-10-30 14:46:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[36mMovie Load (2.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 7ms (ActiveRecord: 6.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Movie with 'id'=aa1000):
+  app/controllers/users_controller.rb:5:in `show'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:47:44 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:47:45 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1312ms (Views: 1119.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:47:48 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (87.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 453ms (Views: 453.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:47:49 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 399ms (Views: 398.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:47:53 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O3c0q/BSkimkcwt2Z24vNf6sYlE2wbkPxBzpyaKHLsm6S17joV42yOGmH/ze2s1nokM5Dy3wn6RJXc5EhguIpg==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 283ms (ActiveRecord: 26.9ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:47:54 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (70.7ms)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"profile", :controller=>"users", :uni=>nil} missing required keys: [:uni]):
+    1: <h2>Edit Profile</h2>
+    2: 
+    3: <%= form_tag profile_path(@user),  :method => :put do %>
+    4:   <%#= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+    5:   <%#= text_field :user, :uni, :class => 'form-control' %>
+    6:   <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
+  app/views/users/profile.erb:3:in `_app_views_users_profile_erb__1958952913359827575_70276107550120'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:48:57 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:48:58 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 1320ms (Views: 1132.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:49:01 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (93.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 497ms (Views: 496.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:49:02 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 343ms (Views: 343.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:49:06 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QHA2MuIyd2O9NSU2+IN9qr+lci6KUKVYHaZAZ5olO6bBTFx6sz7TgvjgMbxBN5/440opcJFhg/OQ52fqvqmdyQ==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 20.8ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"profile", :controller=>"users"} missing required keys: [:uni]):
+  app/controllers/users_controller.rb:41:in `checkpwd'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.6ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:49:26 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:49:27 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1302ms (Views: 1116.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:49:29 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (90.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 487ms (Views: 487.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:49:32 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 391ms (Views: 391.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:49:35 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uops0grqDT/fZx7uwG4dA3e9UaBHuUObfVcwe05GIN7TtgaaW+ap3pqyCmR52v9RK1IK/lyIZTDwFhf2asqGsQ==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (3.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 279ms (ActiveRecord: 25.4ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:49:35 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (70.3ms)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"profile", :controller=>"users", :uni=>nil} missing required keys: [:uni]):
+    1: <h2>Edit Profile</h2>
+    2: 
+    3: <%= form_tag profile_path(@user),  :method => :put do %>
+    4:   <%#= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+    5:   <%#= text_field :user, :uni, :class => 'form-control' %>
+    6:   <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
+  app/views/users/profile.erb:3:in `_app_views_users_profile_erb___316494866053792773_69893553531900'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:50:20 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:50:21 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1302ms (Views: 1116.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:50:24 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (87.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 486ms (Views: 485.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:50:25 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 392ms (Views: 391.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:50:29 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"30UsxgUomoSm8EuqF9suJAGC5mTcCQNqtgc+6ojuoEteeUaOVCQ+ZeMlXyCub8x2XW29Osc4JcE7RhlnrGIGJA==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 273ms (ActiveRecord: 24.8ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:50:29 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (83.6ms)
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `uni' for #<#<Class:0x00005559d9abd500>:0x00007fee38d9e3f0>
+Did you mean?  URI):
+    1: <h2>Edit Profile</h2>
+    2: 
+    3: <%= form_tag profile_path(uni),  :method => :put do %>
+    4:   <%#= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+    5:   <%#= text_field :user, :uni, :class => 'form-control' %>
+    6:   <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
+  app/views/users/profile.erb:3:in `_app_views_users_profile_erb__3565114175840165372_70330566385040'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:50:52 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:50:53 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (15.9ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1305ms (Views: 1115.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:50:55 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 398ms (Views: 397.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:50:56 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (87.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 479ms (Views: 478.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:50:58 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 404ms (Views: 403.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:51:02 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ydeOPpoPJKzz11FiabrD+bxfOvGXYK96vlhIG/V7iipI6+R2ywOATbYCRejQDiGr4LBhr4xRidEzGW+W0fcsRQ==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 264ms (ActiveRecord: 26.1ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:51:02 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (16.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 414ms (Views: 414.0ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/profile/uni" for 127.0.0.1 at 2022-10-30 14:51:07 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vEI1ED6ks3I/Bql3FaqG57Lu6RYQAsQNua+0Mo7X3+I9fl9Yb6gXk3rTvf2sHmS17gGySAsz4qY07pO/qlt5jQ==", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"hello", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"uni"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "uni"]]
+Completed 404 Not Found in 3ms (ActiveRecord: 2.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'uni'=uni):
+  app/controllers/users_controller.rb:79:in `update'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:52:34 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:52:35 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1348ms (Views: 1163.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:52:37 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:52:37 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 329ms (Views: 329.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:52:40 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (88.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 480ms (Views: 479.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:52:41 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 389ms (Views: 389.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:52:45 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xEGQ4h2B4Jdjef/YfBwPDP88IJ5JHzbFKGIcG+y2nZ9FffqqTI1Edias61LFqO1eo9N7wFIuEG6lIzuWyDo78A==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 221ms (ActiveRecord: 34.4ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:52:46 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (71.8ms)
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"profile", :controller=>"users", :uni=>nil} missing required keys: [:uni]):
+    1: <h2>Edit Profile</h2>
+    2: 
+    3: <%= form_tag profile_path(@user),  :method => :put do %>
+    4:   <%#= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+    5:   <%#= text_field :user, :uni, :class => 'form-control' %>
+    6:   <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
+  app/views/users/profile.erb:3:in `_app_views_users_profile_erb__2607689068603870602_69828388721020'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:53:22 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:53:23 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1130ms (Views: 947.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:53:26 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (70.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 401ms (Views: 400.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:53:27 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 338ms (Views: 337.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:53:30 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DSzK5bydrPrgvR9BSA7OfVcRz1ycICLb69tViyI19i+MEKCt7ZEIG6VoC8vxuiwvC/6UAocRBHBmmnIGBrlQQA==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 249ms (ActiveRecord: 22.9ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:53:31 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (58.5ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `uni' for nil:NilClass
+Did you mean?  until):
+    1: <h2>Edit Profile</h2>
+    2: 
+    3: <%= form_tag profile_path(@user.uni),  :method => :put do %>
+    4:   <%#= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+    5:   <%#= text_field :user, :uni, :class => 'form-control' %>
+    6:   <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
+  app/views/users/profile.erb:3:in `_app_views_users_profile_erb___688077466501095584_70179873482560'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:53:53 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:53:54 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1284ms (Views: 1098.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:53:57 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (76.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 421ms (Views: 420.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:53:58 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 338ms (Views: 337.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:54:01 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ls42T45of8Px/GchbPPazMOJv1xPqesvIPOq/OxyS26v8lwH32TbIrQpc6vVRzien2bkAlSYzYStso1xyP7tAQ==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 259ms (ActiveRecord: 25.9ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:54:01 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (82.6ms)
+Completed 500 Internal Server Error in 246ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `param' for #<#<Class:0x000056423ce103a0>:0x000056423bec99f0>
+Did you mean?  params):
+    1: <h2>Edit Profile</h2>
+    2: 
+    3: <%= form_tag profile_path(param[:uni]),  :method => :put do %>
+    4:   <%#= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+    5:   <%#= text_field :user, :uni, :class => 'form-control' %>
+    6:   <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
+  app/views/users/profile.erb:3:in `_app_views_users_profile_erb___3141649459866210615_47421240335080'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:54:19 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:54:20 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1119ms (Views: 937.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:54:22 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (82.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 434ms (Views: 433.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:54:23 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 336ms (Views: 335.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:54:28 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D3ffrBu88aC7OPHZgAfI0y0BVe8FYL/BbUP41Bzwm2uOS7XkSrBVQf7t5VM5syqBce4OsR5RmWrgAt9ZOHw9BA==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 234ms (ActiveRecord: 22.5ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:54:28 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (13.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 367ms (Views: 366.6ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:54:33 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/iprg0ZbGNqxJt8vY80zrVm91ez+IBT+xGzJV4S3I5KxMPmXBXIgi8Rj/YEO9ac6YmsCajJpvh2UJSoep564Q==", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"hello", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"aa1000"}
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Completed 400 Bad Request in 4ms (ActiveRecord: 2.5ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: movie):
+  app/controllers/users_controller.rb:96:in `movie_params'
+  app/controllers/users_controller.rb:80:in `update'
+
+
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/ls/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:55:23 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:55:25 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 1284ms (Views: 1097.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:55:50 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (125.6ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 1266ms (Views: 1265.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 14:55:53 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 14:55:53 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 605ms (Views: 397.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 14:55:55 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 323ms (Views: 322.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 14:55:56 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 398ms (Views: 397.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 14:56:00 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z8S4aIMEcDNrAgnjhwYSFi4Zbd2096u6UEnAbwgwWUXm+NIg0gjU0i7XHWk+svBEcvY2g6/GjRHdCOfiLLz/Kg==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 244ms (ActiveRecord: 24.5ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:56:00 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (11.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 320ms (Views: 320.2ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:56:04 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5E2YuTWwMisHt17PiHJKB+dBLjsoT43a0zoNDnc3J9dlcfLxZLyWykJiSkUxxqhVu651ZTN+q3FeeyqDU7uBuA==", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"hello", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"aa1000"}
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (1.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (3.7ms)[0m  UPDATE "users" SET "lionmail" = ?, "phone" = ?, "description" = ?, "skills" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["lionmail", ""], ["phone", ""], ["description", "hello"], ["skills", ""], ["updated_at", "2022-10-30 18:56:04.278332"], ["uni", "aa1000"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 21ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 14:56:04 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 388ms (Views: 388.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 15:03:38 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 15:03:39 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 1152ms (Views: 989.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-10-30 15:04:12 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (95.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 479ms (Views: 479.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 15:04:15 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 517ms (Views: 517.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 15:04:22 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"umpIA3I65XxlUnEUeV4/B/pmhXlEP29OHuwF2dnfKrU7ViJLIzZBnSCHZZ7A6t1VponeJ18OSeWTrSJU/VOM2g==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35mUser Exists (2.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 303ms (ActiveRecord: 30.3ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 15:04:23 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (21.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 509ms (Views: 508.4ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/profile/aa1000" for 127.0.0.1 at 2022-10-30 15:04:42 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K1K1kQwY3EE/ayI8k7HMWOhU6+BZLq2//bpqcjWHb+2qbt/ZXRR4oHq+NrYqBS4KtLuwvkIfixRw+03/EQvJgg==", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"hello everyone", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"aa1000"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (2.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (4.7ms)[0m  UPDATE "users" SET "description" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["description", "hello everyone"], ["updated_at", "2022-10-30 19:04:43.085473"], ["uni", "aa1000"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profile/aa1000
+Completed 302 Found in 27ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 15:04:43 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 486ms (Views: 485.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 15:06:11 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 498ms (Views: 498.1ms | ActiveRecord: 0.0ms)

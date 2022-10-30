@@ -1,8 +1,8 @@
 <h2>Edit Profile</h2>
 
-<%= form_tag movies_path(@user), :class => 'put' do %>
-  <%= label :user, :uni, 'UNI', :class => 'col-form-label' %>
-  <%= text_field :user, :uni, :class => 'form-control' %>
+<%= form_tag profile_path(params[:uni]),  :method => :put do %>
+  <%#= label :user, :uni, 'UNI', :class => 'col-form-label' %>
+  <%#= text_field :user, :uni, :class => 'form-control' %>
   <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
   <%= text_field :user, :lionmail, :class => 'form-control' %>
   <%= label :user, :phone, 'Phone', :class => 'col-form-label' %>
@@ -44,5 +44,5 @@
   <%= text_field :user, :skills, :class => 'form-control' %>
   <br/>
   <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
-  <%= link_to 'Cancel', movies_path, :class => 'btn btn-secondary' %>
+  <%= link_to 'Cancel', users_path, :class => 'btn btn-secondary' %>
 <% end %>

@@ -1,9 +1,9 @@
-class MoviesController < ApplicationController
+class UsersController < ApplicationController
 
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.<extension> by default
+    # will render app/views/users/show.<extension> by default
   end
 
   def index
@@ -38,7 +38,7 @@ class MoviesController < ApplicationController
     @user = User.find(uni)
     if @user.valid?
       if password == @user.password
-          redirect_to profile_path(@user)
+          redirect_to profile_path(uni)
       else
         flash[:notice] = "Invalid password. Please try again."
         redirect_to signin_path
@@ -70,14 +70,16 @@ class MoviesController < ApplicationController
   end
 
   def edit
-    @movie = Movie.find params[:id]
+    @user = User.find params[:uni]
   end
+  def profile
 
+  end
   def update
-    @movie = Movie.find params[:id]
-    @movie.update_attributes!(movie_params)
-    flash[:notice] = "#{@movie.title} was successfully updated."
-    redirect_to movie_path(@movie)
+    @user = User.find params[:uni]
+    @user.update_attributes!(user_params)
+    flash[:notice] = "#{@user.uni} was successfully updated."
+    redirect_to profile_path(@user)
   end
 
   def destroy
