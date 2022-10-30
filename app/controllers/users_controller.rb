@@ -19,24 +19,14 @@ class UsersController < ApplicationController
   end
 
   def signin
-    print("signin")
-    #uni = user_params[:uni]
-    # password = user_params[:password]
-    # @user = User.find(uni)
-    # if @user
-    #   if password == @user.password
-    #
-    #   end
-    # else
-    #
-    # end
+
   end
   def checkpwd
     uni = user_params[:uni]
     password = user_params[:password]
 
-    @user = User.find(uni)
-    if @user.valid?
+    @user = User.find_by(uni: uni)
+    if @user != nil
       if password == @user.password
           redirect_to course_path(uni)
       else
