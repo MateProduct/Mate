@@ -36,4 +36,5 @@
 <%= form_tag  course_path, :class => 'form' do %>
   <%#= submit_tag 'Edit Profile', :class => 'btn btn-primary' %>
   <%= link_to 'Edit profile', profile_path(params[:uni]), :class => 'btn btn-primary' %>
+  <%= link_to 'Sign out', users_path, :class => 'btn btn-secondary' %>
 <% end %>
