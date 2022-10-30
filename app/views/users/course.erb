@@ -1,7 +1,39 @@
-<h2>Course</h2>
+<h2>Profile and Course</h2>
+<h2>Details about <em><%= @user.uname%></em></h2>
+
+<ul id="details">
+  <li>
+    UNI:
+    <%= @user.uni %>
+  </li>
+  <li>
+    Lionmail:
+    <%= @user.lionmail %>
+  </li>
+  <li>
+    Phone Number:
+    <%= @user.phone %>
+  </li>
+  <li>
+    Contact:
+    <%= @user.contact %>
+  </li>
+  <li>
+    Available Time:
+    <%= @user.time_slot %>
+  </li>
+  <li>
+    Available Time:
+    <%= @user.skills %>
+  </li>
+</ul>
+
+<h3>About Me:</h3>
+<p id="description">
+  <%= @user.description %>
+</p>
 
 <%= form_tag  course_path, :class => 'form' do %>
   <%#= submit_tag 'Edit Profile', :class => 'btn btn-primary' %>
-  <%= link_to 'Edit Profile', profile_path, :class => 'btn btn-primary' %>
-  <%= link_to 'Back to HomePage', course_path, :class => 'btn btn-secondary' %>
+  <%= link_to 'Edit profile', profile_path(params[:uni]), :class => 'btn btn-primary' %>
 <% end %>

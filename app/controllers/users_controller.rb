@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
 
   def show
-    id = params[:id] # retrieve movie ID from URI route
-    @movie = Movie.find(id) # look up movie by unique ID
+    uni = params[:uni] # retrieve movie ID from URI route
+    @uni = user.find(uni) # look up movie by unique ID
     # will render app/views/users/show.<extension> by default
   end
 
   def index
-    @movies = Movie.all
+
   end
 
   def new
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.find(uni)
     if @user.valid?
       if password == @user.password
-          redirect_to profile_path(uni)
+          redirect_to course_path(uni)
       else
         flash[:notice] = "Invalid password. Please try again."
         redirect_to signin_path
@@ -83,7 +83,7 @@ class UsersController < ApplicationController
   end
 
   def course
-
+    @user = User.find params[:uni]
   end
 
   def destroy
