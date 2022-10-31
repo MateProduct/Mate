@@ -2037,3 +2037,1356 @@ Processing by UsersController#course as HTML
   Rendered layouts/_flash.erb (0.2ms)
 Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
   [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:18:36.753350"], ["updated_at", "2022-10-31 19:18:36.753350"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:18:36.766456"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:18:36.772474"], ["updated_at", "2022-10-31 19:18:36.772474"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:18:36.777808"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:34:32.721867"], ["updated_at", "2022-10-31 19:34:32.721867"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:34:32.733816"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:34:32.739713"], ["updated_at", "2022-10-31 19:34:32.739713"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:34:32.744854"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 19:34:32.788221"], ["updated_at", "2022-10-31 19:34:32.788221"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:35:55.269856"], ["updated_at", "2022-10-31 19:35:55.269856"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:35:55.281219"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:35:55.287386"], ["updated_at", "2022-10-31 19:35:55.287386"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:35:55.292542"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 19:35:55.311467"], ["updated_at", "2022-10-31 19:35:55.311467"]]
+  [1m[35m (1.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:38:27.930064"], ["updated_at", "2022-10-31 19:38:27.930064"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:38:27.941838"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:38:27.948156"], ["updated_at", "2022-10-31 19:38:27.948156"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:38:27.953388"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 19:38:27.962464"], ["updated_at", "2022-10-31 19:38:27.962464"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 23ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:41:25.921077"], ["updated_at", "2022-10-31 19:41:25.921077"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:41:25.932604"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:41:25.938787"], ["updated_at", "2022-10-31 19:41:25.938787"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:41:25.944097"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 19:41:25.952905"], ["updated_at", "2022-10-31 19:41:25.952905"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 21ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:52:40.088061"], ["updated_at", "2022-10-31 19:52:40.088061"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:52:40.099536"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:52:40.105753"], ["updated_at", "2022-10-31 19:52:40.105753"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 19:52:40.112184"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 19:52:40.132390"], ["updated_at", "2022-10-31 19:52:40.132390"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 40ms (Views: 14.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:52:40.211140"], ["updated_at", "2022-10-31 19:52:40.211140"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 19:52:40.222086"], ["updated_at", "2022-10-31 19:52:40.222086"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:00:58.662217"], ["updated_at", "2022-10-31 20:00:58.662217"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:00:58.674093"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:00:58.679999"], ["updated_at", "2022-10-31 20:00:58.679999"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:00:58.687867"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:00:58.707280"], ["updated_at", "2022-10-31 20:00:58.707280"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 41ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:00:58.787287"], ["updated_at", "2022-10-31 20:00:58.787287"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:00:58.794176"], ["updated_at", "2022-10-31 20:00:58.794176"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:20:40.442578"], ["updated_at", "2022-10-31 20:20:40.442578"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:20:40.454851"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:20:40.460924"], ["updated_at", "2022-10-31 20:20:40.460924"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:20:40.466269"], ["uni", "aa1000"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:20:40.476126"], ["updated_at", "2022-10-31 20:20:40.476126"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 22ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:20:40.517261"], ["updated_at", "2022-10-31 20:20:40.517261"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:20:40.522052"], ["updated_at", "2022-10-31 20:20:40.522052"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:21:08.458959"], ["updated_at", "2022-10-31 20:21:08.458959"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:21:08.470877"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:21:08.477229"], ["updated_at", "2022-10-31 20:21:08.477229"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:21:08.483924"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:21:08.504207"], ["updated_at", "2022-10-31 20:21:08.504207"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 39ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:21:08.587506"], ["updated_at", "2022-10-31 20:21:08.587506"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:21:08.600861"], ["updated_at", "2022-10-31 20:21:08.600861"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:43.879884"], ["updated_at", "2022-10-31 20:25:43.879884"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:25:43.891616"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:43.898071"], ["updated_at", "2022-10-31 20:25:43.898071"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:25:43.904988"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:25:43.925388"], ["updated_at", "2022-10-31 20:25:43.925388"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (1.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 39ms (Views: 14.5ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:44.003749"], ["updated_at", "2022-10-31 20:25:44.003749"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:44.013261"], ["updated_at", "2022-10-31 20:25:44.013261"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:58.372397"], ["updated_at", "2022-10-31 20:25:58.372397"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:25:58.384137"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:58.390634"], ["updated_at", "2022-10-31 20:25:58.390634"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:25:58.396140"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:25:58.405624"], ["updated_at", "2022-10-31 20:25:58.405624"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 20ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:58.444545"], ["updated_at", "2022-10-31 20:25:58.444545"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:58.452333"], ["updated_at", "2022-10-31 20:25:58.452333"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:58.459169"], ["updated_at", "2022-10-31 20:25:58.459169"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:25:58.464052"], ["updated_at", "2022-10-31 20:25:58.464052"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/course.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:26:12.639677"], ["updated_at", "2022-10-31 20:26:12.639677"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:26:12.651054"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:26:12.657278"], ["updated_at", "2022-10-31 20:26:12.657278"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:26:12.662432"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:26:12.681838"], ["updated_at", "2022-10-31 20:26:12.681838"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (1.8ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 38ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:26:12.766088"], ["updated_at", "2022-10-31 20:26:12.766088"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:26:12.778982"], ["updated_at", "2022-10-31 20:26:12.778982"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:26:12.791140"], ["updated_at", "2022-10-31 20:26:12.791140"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/course.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:26:12.815768"], ["updated_at", "2022-10-31 20:26:12.815768"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:27:02.871452"], ["updated_at", "2022-10-31 20:27:02.871452"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:27:02.882800"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:27:02.889242"], ["updated_at", "2022-10-31 20:27:02.889242"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:27:02.894695"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:27:02.904265"], ["updated_at", "2022-10-31 20:27:02.904265"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 20ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:27:02.943178"], ["updated_at", "2022-10-31 20:27:02.943178"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:27:02.950232"], ["updated_at", "2022-10-31 20:27:02.950232"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:27:02.956711"], ["updated_at", "2022-10-31 20:27:02.956711"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/course.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:27:02.963379"], ["updated_at", "2022-10-31 20:27:02.963379"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:35:46.581011"], ["updated_at", "2022-10-31 20:35:46.581011"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:35:46.592862"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:35:46.598717"], ["updated_at", "2022-10-31 20:35:46.598717"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:35:46.605034"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:35:46.625288"], ["updated_at", "2022-10-31 20:35:46.625288"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 41ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:35:46.705496"], ["updated_at", "2022-10-31 20:35:46.705496"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:35:46.718557"], ["updated_at", "2022-10-31 20:35:46.718557"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:35:46.726710"], ["updated_at", "2022-10-31 20:35:46.726710"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/course.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:35:46.758922"], ["updated_at", "2022-10-31 20:35:46.758922"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/course.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:38:20.025092"], ["updated_at", "2022-10-31 20:38:20.025092"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:38:20.036691"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:38:20.042954"], ["updated_at", "2022-10-31 20:38:20.042954"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Tuesday"}, "uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "time_slot" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["time_slot", "Tuesday"], ["updated_at", "2022-10-31 20:38:20.048158"], ["uni", "aa1000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/course/aa1000
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["password", "123456"], ["uname", "aa1000"], ["created_at", "2022-10-31 20:38:20.057123"], ["updated_at", "2022-10-31 20:38:20.057123"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+Redirected to http://test.host/signin
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"aa1000", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/signup.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 20ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"uni"=>"", "uname"=>"aa1000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "lionmail"=>"aa1000@columbia.edu", "time_slot"=>"Monday"}}
+Unpermitted parameters: lionmail, time_slot
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = '' LIMIT 1[0m
+  Rendered users/signup.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:38:20.096250"], ["updated_at", "2022-10-31 20:38:20.096250"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:38:20.104246"], ["updated_at", "2022-10-31 20:38:20.104246"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:38:20.110825"], ["updated_at", "2022-10-31 20:38:20.110825"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/course.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'aa1000' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uni", "uname", "password", "lionmail", "time_slot", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["uni", "aa1000"], ["uname", "aa1000"], ["password", "123456"], ["lionmail", "aa1000@columbia.edu"], ["time_slot", "Monday"], ["created_at", "2022-10-31 20:38:20.117835"], ["updated_at", "2022-10-31 20:38:20.117835"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/course.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
