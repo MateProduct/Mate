@@ -84,9 +84,9 @@
           null,
           1,
           null,
-          3,
-          0,
-          0,
+          null,
+          null,
+          null,
           null,
           3,
           3,
@@ -118,17 +118,13 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
-          null,
-          null,
-          1,
-          0,
           null,
           null,
           1,
@@ -170,17 +166,9 @@
           null,
           null
         ]
-      },
-      "/Users/jwchu/Desktop/W4152/Mate/app/models/movie.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1667191438
+    "timestamp": 1667192968
   },
   "RSpec": {
     "coverage": {

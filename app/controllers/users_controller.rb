@@ -48,10 +48,10 @@ class UsersController < ApplicationController
 
   def create#_user
     # @user = Users.create!(user_params)
-    if User.exists?(uni:params[:uni])
-      flash[:warning] = "Account creation failed. Please check if UNI is already registered."
-      render :action => 'signup'
-    end
+    # if User.exists?(uni:params[:user][:uni])
+    #   flash[:warning] = "Account creation failed. Please check if UNI is already registered."
+    #   render :action => 'signup'
+    # end
     @user = User.create(create_user_params) #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
     if @user.valid?
       flash[:notice] = "#{@user.uni} was successfully created."
@@ -82,19 +82,15 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @movie = Movie.find(params[:id])
-    @movie.destroy
-    flash[:notice] = "Movie '#{@movie.title}' deleted."
-    redirect_to movies_path
+    # @movie = Movie.find(params[:id])
+    # @movie.destroy
+    # flash[:notice] = "Movie '#{@movie.title}' deleted."
+    # redirect_to movies_path
   end
 
   private
   # Making "internal" methods private is not required, but is a common practice.
   # This helps make clear which methods respond to requests, and which ones do not.
-  def movie_params
-    params.require(:movie).permit(:title, :rating, :description, :release_date)
-  end
-
   def user_params
     params.require(:user).permit(:uni, :password, :uname)
   end
