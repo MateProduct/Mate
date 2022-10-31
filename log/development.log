@@ -3733,3 +3733,83 @@ Processing by UsersController#signup as HTML
   Rendered users/signup.erb within layouts/application (1.7ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 21:38:19 -0400
+
+
+Started GET "/users" for 127.0.0.1 at 2022-10-30 21:38:20 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 1029ms (Views: 1028.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2022-10-30 21:38:23 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (89.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 473ms (Views: 472.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-10-30 21:38:26 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p97EMQ1pBVVNDVZRfhX8IlCI/7dO6zYuTpApoypE5MYm4q55XGWhtAjYQtvHoR5wDGek6VXaEIXD0Q4uDshCqQ==", "user"=>{"uni"=>"aa1000", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+Redirected to http://localhost:3000/course/aa1000
+Completed 302 Found in 259ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 21:38:27 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 342ms (Views: 338.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 21:38:31 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (14.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 402ms (Views: 401.8ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/profile/aa1000" for 127.0.0.1 at 2022-10-30 21:38:37 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zUR5B6ns0LT5YpYRCjE3qBCvPFPhVskb8uRV5BKij0dMeBNP+OB0Vby3gpuzhdX6TEBnDfpn77B/pXJpNi4pKA==", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"hello world", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"aa1000"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'aa1000' AND "users"."uni" != 'aa1000') LIMIT 1[0m
+  [1m[35mSQL (3.6ms)[0m  UPDATE "users" SET "description" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["description", "hello world"], ["updated_at", "2022-10-31 01:38:37.335261"], ["uni", "aa1000"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/course/aa1000
+Completed 302 Found in 116ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 21:38:37 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[35mUser Load (2.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 399ms (Views: 395.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/profile/aa1000" for 127.0.0.1 at 2022-10-30 21:38:40 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"aa1000"}
+  Rendered users/profile.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 408ms (Views: 407.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/course/aa1000" for 127.0.0.1 at 2022-10-30 21:38:41 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"aa1000"}
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "aa1000"]]
+  Rendered users/course.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 390ms (Views: 386.9ms | ActiveRecord: 1.9ms)

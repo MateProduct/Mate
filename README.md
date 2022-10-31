@@ -58,15 +58,14 @@ Then followed normal steps to update schema
 * Get User Id and use Update method to update user attributes in the database
 * Create Course page and Profile page
 * Link all pages together
-* Write and Pass Cucumber test
+* Write and Pass Cucumber and Rspec test
 ```
  $ rails g model AddLionmailToUser lionmail:string
  $ bundle exec rake db:migrate                                      
 ```
 * Created a profile page
 
-#### To DO:
-- [ ] Write Rspec test
+#### To DO (next iteration):
 - [ ] Possible change the uni
 - [ ] Possible do the checkbox rather than selection
 </details>
