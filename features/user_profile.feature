@@ -5,9 +5,9 @@ Feature: edit personal profile
 
 Background: users in the database
   Given the following users exist:
-    | uni          | uname     | lionmail            |   time_slot  |
-    | aa1000       | aa1000    | aa1000@columbia.edu |   Monday     |
-    | aa1100       | aa1100    | aa1100@columbia.edu |   Tuesday    |
+    | uni          | uname     | lionmail            |   time_slot  | password     | password_confirmation  |
+    | aa1000       | aa1000    | aa1000@columbia.edu |   Monday     | 123456       | 123456                 |
+    | aa1100       | aa1100    | aa1100@columbia.edu |   Tuesday    | 123456       | 123456                 |
 
 Scenario: change user aa1000 available time to Tuesday
   Given I am on the course page for "aa1000"

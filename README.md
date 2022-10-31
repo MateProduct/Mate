@@ -38,12 +38,11 @@ $ .table
 $ select * from users;
 ```
 * Added "gem 'bcrypt'" into Gemfile, remember to run 'bundle install' before deploy!
-
+* Password validation (confirm your password)
+* UNI cannot be null
+* Show error message use @user.errors on signup if user already exists <a href="https://stackoverflow.com/a/23975918/19843708">StackOverflow</a>
+* Wrote Cucumber test
 #### To DO:
-- [X] Password validation (confirm your password)
-- [X] UNI cannot be null
-- [X] Show error message use @user.errors on signup if user already exists <a href="https://stackoverflow.com/a/23975918/19843708">StackOverflow</a>
-- [ ] Write Cucumber
 - [ ] Write Rspec tests
 - [ ] Can check this: <a href="https://dev.to/kjdowns/creating-a-user-login-system-ruby-on-rails-2kl2">StackOverflow</a> for checking uid of logged-in user
 
