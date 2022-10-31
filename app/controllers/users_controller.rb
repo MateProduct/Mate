@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       flash[:warning] = "Account creation failed. Please check if UNI is already registered."
       render :action => 'signup'
     end
-    @user = User.create(user_params) #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
+    @user = User.create(create_user_params) #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
     if @user.valid?
       flash[:notice] = "#{@user.uni} was successfully created."
       redirect_to signin_path
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
   end
   def update
     @user = User.find params[:uni]
-    @user.update_attributes!(user_params)
+    @user.update_attributes!(update_params)
     flash[:notice] = "#{@user.uni} was successfully updated."
     redirect_to course_path(@user)
   end
@@ -96,7 +96,15 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:uni, :password, :password_confirmation,:uname, :lionmail, :phone, :contact, :time_slot, :description, :skills)
+    params.require(:user).permit(:uni, :password, :uname)
+  end
+
+  def update_params
+    params.require(:user).permit(:uni,:uname, :lionmail, :phone, :contact, :time_slot, :description, :skills)
+  end
+
+  def create_user_params
+    params.require(:user).permit(:uni, :password, :password_confirmation,:uname)
   end
 
 end

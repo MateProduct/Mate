@@ -3898,3 +3898,449 @@ Processing by UsersController#create as HTML
   Rendered users/signup.erb within layouts/application (1.0ms)
   Rendered layouts/_flash.erb (0.0ms)
 Completed 200 OK in 27ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:13:37 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6deAmnJgDSLjVlfhe9GEJll54UeUiMfOEPBnBXmPIVMOLgRNiXLPfuzEbJdLu7CIMGryIHbxz5BHvDjCdKKHQ==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+ArgumentError (You need to supply at least one validation):
+  app/models/user.rb:8:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:75:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.7ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:15:45 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6deAmnJgDSLjVlfhe9GEJll54UeUiMfOEPBnBXmPIVMOLgRNiXLPfuzEbJdLu7CIMGryIHbxz5BHvDjCdKKHQ==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 3.3ms)
+
+NoMethodError (undefined method `password_digest' for #<User:0x000000010197f6d8>
+Did you mean?  password):
+  app/controllers/users_controller.rb:76:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.6ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:16:27 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6deAmnJgDSLjVlfhe9GEJll54UeUiMfOEPBnBXmPIVMOLgRNiXLPfuzEbJdLu7CIMGryIHbxz5BHvDjCdKKHQ==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "jc5897"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `password_digest' for #<User:0x00000001018de5f8>
+Did you mean?  password):
+  app/controllers/users_controller.rb:76:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.8ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:16:30 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6deAmnJgDSLjVlfhe9GEJll54UeUiMfOEPBnBXmPIVMOLgRNiXLPfuzEbJdLu7CIMGryIHbxz5BHvDjCdKKHQ==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `password_digest' for #<User:0x0000000101e321a8>
+Did you mean?  password):
+  app/controllers/users_controller.rb:76:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.0ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:16:33 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6deAmnJgDSLjVlfhe9GEJll54UeUiMfOEPBnBXmPIVMOLgRNiXLPfuzEbJdLu7CIMGryIHbxz5BHvDjCdKKHQ==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "jc5897"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `password_digest' for #<User:0x0000000101bda6d0>
+Did you mean?  password):
+  app/controllers/users_controller.rb:76:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.1ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:25:56 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6deAmnJgDSLjVlfhe9GEJll54UeUiMfOEPBnBXmPIVMOLgRNiXLPfuzEbJdLu7CIMGryIHbxz5BHvDjCdKKHQ==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'jc5897' AND "users"."uni" != 'jc5897') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 28ms (ActiveRecord: 0.8ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation can't be blank):
+  app/controllers/users_controller.rb:76:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.0ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:26:18 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6deAmnJgDSLjVlfhe9GEJll54UeUiMfOEPBnBXmPIVMOLgRNiXLPfuzEbJdLu7CIMGryIHbxz5BHvDjCdKKHQ==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'jc5897' AND "users"."uni" != 'jc5897') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 13ms (ActiveRecord: 0.8ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation can't be blank):
+  app/controllers/users_controller.rb:76:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.1ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:26:21 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6deAmnJgDSLjVlfhe9GEJll54UeUiMfOEPBnBXmPIVMOLgRNiXLPfuzEbJdLu7CIMGryIHbxz5BHvDjCdKKHQ==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'jc5897' AND "users"."uni" != 'jc5897') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 6ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation can't be blank):
+  app/controllers/users_controller.rb:76:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.1ms)
+
+
+Started GET "/profile/jc5897" for ::1 at 2022-10-30 20:36:28 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"jc5897"}
+  Rendered users/profile.erb within layouts/application (10.9ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 224ms (Views: 223.7ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:36:32 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2mAwcrTZYDfS+1P6WPHzVXtp2PQmK9CN8YHXzFn3Aq7p/9Zh6zUrPqLFGxeAMFuHws2UubmiNKyI3OazRcO0Ng==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'jc5897' AND "users"."uni" != 'jc5897') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 73ms (ActiveRecord: 2.5ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Password confirmation can't be blank):
+  app/controllers/users_controller.rb:76:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.5ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:38:46 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2mAwcrTZYDfS+1P6WPHzVXtp2PQmK9CN8YHXzFn3Aq7p/9Zh6zUrPqLFGxeAMFuHws2UubmiNKyI3OazRcO0Ng==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `user' for #<UsersController:0x000000015b4a7278>
+Did you mean?  super):
+  app/controllers/users_controller.rb:75:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.7ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:39:46 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2mAwcrTZYDfS+1P6WPHzVXtp2PQmK9CN8YHXzFn3Aq7p/9Zh6zUrPqLFGxeAMFuHws2UubmiNKyI3OazRcO0Ng==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `dont_validate_password' for #<Class:0x000000012d581bb8>):
+  app/controllers/users_controller.rb:75:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (11.9ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:46:24 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2mAwcrTZYDfS+1P6WPHzVXtp2PQmK9CN8YHXzFn3Aq7p/9Zh6zUrPqLFGxeAMFuHws2UubmiNKyI3OazRcO0Ng==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `user' for #<UsersController:0x000000012b0c42f8>
+Did you mean?  super):
+  app/controllers/users_controller.rb:75:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.2ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:46:38 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2mAwcrTZYDfS+1P6WPHzVXtp2PQmK9CN8YHXzFn3Aq7p/9Zh6zUrPqLFGxeAMFuHws2UubmiNKyI3OazRcO0Ng==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `dont_validate_password' for #<Class:0x000000011b94e668>):
+  app/controllers/users_controller.rb:75:in `update'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.3ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:48:15 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2mAwcrTZYDfS+1P6WPHzVXtp2PQmK9CN8YHXzFn3Aq7p/9Zh6zUrPqLFGxeAMFuHws2UubmiNKyI3OazRcO0Ng==", "user"=>{"lionmail"=>"jc5897.com", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'jc5897' AND "users"."uni" != 'jc5897') LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "users" SET "lionmail" = ?, "phone" = ?, "contact" = ?, "time_slot" = ?, "description" = ?, "skills" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["lionmail", "jc5897.com"], ["phone", ""], ["contact", ""], ["time_slot", "Monday"], ["description", ""], ["skills", ""], ["updated_at", "2022-10-31 00:48:15.435439"], ["uni", "jc5897"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/course/jc5897
+Completed 302 Found in 17ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/course/jc5897" for ::1 at 2022-10-30 20:48:15 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"jc5897"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "jc5897"]]
+  Rendered users/course.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2022-10-30 20:48:32 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2022-10-30 20:48:36 -0400
+Processing by UsersController#signup as HTML
+  Rendered users/signup.erb within layouts/application (6.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 50ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2022-10-30 20:48:52 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UsBohld7KdwveAaHVzjPS/amUqCrA4ByyOR5GDc/Gc9hX46VCJdi1V9GTmqP+WeZTwIe7TSKZFOxuUhnKwuvVw==", "user"=>{"uni"=>"fg2453", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "uname"=>"GU"}, "commit"=>"Sign up"}
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'fg2453' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."uni" = 'fg2453' LIMIT 1[0m
+  Rendered users/signup.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 12.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2022-10-30 20:50:12 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c7tNJDM6tlJ5/3GHyqtcMp+A/SMY4Aus4CU4wFsputJAJKs3bNb9WwnBOWoSavTgJiSxbodp742ZeAm/Rx0MSg==", "user"=>{"uni"=>"fg2453", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "uname"=>"GU"}, "commit"=>"Sign up"}
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."uni" = 'fg2453' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password", "uname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "fg2453"], ["password", "234"], ["uname", "GU"], ["created_at", "2022-10-31 00:50:13.060892"], ["updated_at", "2022-10-31 00:50:13.060892"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'fg2453' AND "users"."uni" != 'fg2453') LIMIT 1[0m
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 16ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/signin" for ::1 at 2022-10-30 20:50:13 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2022-10-30 20:50:18 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QTTV6AF+SGMcXgRom4IMTMnKmd67dHhpbgqmRpJlfTFyqzP7XpIDamxgTIVDQ6SecG7VkyT9nEgXV5c5jlHLqQ==", "user"=>{"uni"=>"jc5897", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `user_params' for #<UsersController:0x000000011b877820>
+Did you mean?  user_path):
+  app/controllers/users_controller.rb:25:in `checkpwd'
+
+
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jwchu/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.2ms)
+
+
+Started POST "/signin" for ::1 at 2022-10-30 20:51:13 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QTTV6AF+SGMcXgRom4IMTMnKmd67dHhpbgqmRpJlfTFyqzP7XpIDamxgTIVDQ6SecG7VkyT9nEgXV5c5jlHLqQ==", "user"=>{"uni"=>"jc5897", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "jc5897"]]
+Redirected to http://localhost:3000/course/jc5897
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/course/jc5897" for ::1 at 2022-10-30 20:51:13 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"jc5897"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  Rendered users/course.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2022-10-30 20:51:15 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2022-10-30 20:51:16 -0400
+Processing by UsersController#signin as HTML
+  Rendered users/signin.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2022-10-30 20:51:17 -0400
+Processing by UsersController#checkpwd as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cLef74SkwBuEJdsZ5UGbQYiGgcvuI4M3UbVsyaZ4cHtDKHn820iLEvQbk/Q9gDOTMSLNhnGqZxYo6F22ukzG4w==", "user"=>{"uni"=>"jc5897", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "jc5897"]]
+Redirected to http://localhost:3000/course/jc5897
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/course/jc5897" for ::1 at 2022-10-30 20:51:17 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"jc5897"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  Rendered users/course.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile/jc5897" for ::1 at 2022-10-30 20:51:18 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"jc5897"}
+  Rendered users/profile.erb within layouts/application (5.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/course/jc5897" for ::1 at 2022-10-30 20:51:21 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"jc5897"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "jc5897"]]
+  Rendered users/course.erb within layouts/application (3.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/profile/jc5897" for ::1 at 2022-10-30 20:51:22 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"jc5897"}
+  Rendered users/profile.erb within layouts/application (5.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:51:33 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ArEoi4wiPSEZmY4Lvh8W3jO5G7p6QVwR23EfpBMLQr0xLs6Y0852KGmnxuZm3r4Mih1X9+XIuDCiLC7bDz/0JQ==", "user"=>{"lionmail"=>"jc5897@columbia.edu", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'jc5897' AND "users"."uni" != 'jc5897') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "lionmail" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["lionmail", "jc5897@columbia.edu"], ["updated_at", "2022-10-31 00:51:33.798712"], ["uni", "jc5897"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/course/jc5897
+Completed 302 Found in 17ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/course/jc5897" for ::1 at 2022-10-30 20:51:33 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"jc5897"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "jc5897"]]
+  Rendered users/course.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile/jc5897" for ::1 at 2022-10-30 20:51:42 -0400
+Processing by UsersController#profile as HTML
+  Parameters: {"uni"=>"jc5897"}
+  Rendered users/profile.erb within layouts/application (6.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/profile/jc5897" for ::1 at 2022-10-30 20:51:47 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NxctvklfUrDLJI9k/t8ovWX9ToUO/vgmlS7u5lgBNnkEiMutFrMZubsax4kmHoBv3FkCyJF3HAfsc9+ZRDWA4Q==", "user"=>{"lionmail"=>"", "phone"=>"", "contact"=>"", "time_slot"=>"Monday", "description"=>"Chinese", "skills"=>""}, "commit"=>"Save Changes", "uni"=>"jc5897"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "jc5897"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."uni" = 'jc5897' AND "users"."uni" != 'jc5897') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "lionmail" = ?, "description" = ?, "updated_at" = ? WHERE "users"."uni" = ?  [["lionmail", ""], ["description", "Chinese"], ["updated_at", "2022-10-31 00:51:47.876750"], ["uni", "jc5897"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/course/jc5897
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/course/jc5897" for ::1 at 2022-10-30 20:51:47 -0400
+Processing by UsersController#course as HTML
+  Parameters: {"uni"=>"jc5897"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "jc5897"]]
+  Rendered users/course.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms)

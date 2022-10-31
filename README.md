@@ -3,6 +3,8 @@
 <details open>
 
 lx2301 Lei Xu
+
+jc5897 Jiawen Chu
 ## How to run this program
 
 ```
@@ -35,11 +37,12 @@ $ .mode columns    #(turn headers on and show database data in column mode )
 $ .table
 $ select * from users;
 ```
+* Added "gem 'bcrypt'" into Gemfile, remember to run 'bundle install' before deploy!
 
 #### To DO:
 - [X] Password validation (confirm your password)
 - [X] UNI cannot be null
-- [ ] Show error message use @user.errors on signup if user already exists <a href="https://stackoverflow.com/a/23975918/19843708">StackOverflow</a>
+- [X] Show error message use @user.errors on signup if user already exists <a href="https://stackoverflow.com/a/23975918/19843708">StackOverflow</a>
 - [ ] Write Cucumber
 - [ ] Write Rspec tests
 - [ ] Can check this: <a href="https://dev.to/kjdowns/creating-a-user-login-system-ruby-on-rails-2kl2">StackOverflow</a> for checking uid of logged-in user
@@ -79,4 +82,6 @@ $ select * from users;
 - [ ] Write Rspec test
 - [ ] Possible change the uni
 - [ ] Possible do the checkbox rather than selection
+- [ ] Check email format
+- [ ] (If possible: only update fields that has input/ show original info when editing)
 </details>
