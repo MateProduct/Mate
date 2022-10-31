@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
   def show
-    uni = params[:uni] # retrieve movie ID from URI route
-    @uni = user.find(uni) # look up movie by unique ID
-    # will render app/views/users/show.<extension> by default
+    uni = params[:id] # retrieve user ID(uni) from URI route
+    @user = User.find(uni) # look up user by unique ID
+    # # will render app/views/users/show.<extension> by default
   end
 
   def index
@@ -65,7 +65,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find params[:uni]
+    # @user = User.find params[:uni]
   end
   def profile
 
