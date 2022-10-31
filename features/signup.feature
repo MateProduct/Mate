@@ -3,6 +3,12 @@ Feature: Sign up a new account
   So that I can sign in as a user
   I want to create a account
 
+Background: users in the database
+  Given the following users exist:
+    | uni          | uname     | lionmail            |   time_slot  |
+    | aa1000       | aa1000    | aa1000@columbia.edu |   Monday     |
+    | aa1100       | aa1100    | aa1100@columbia.edu |   Tuesday    |
+
 Scenario: fill in sign up form correctly
   When I go to the signup page
   And I fill in "UNI" with "jc5897"

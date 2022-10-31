@@ -44,5 +44,5 @@
   <%= text_field :user, :skills, :class => 'form-control' %>
   <br/>
   <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
-  <%= link_to 'Cancel', course_path, :class => 'btn btn-secondary' %>
+  <%= link_to 'Courses', course_path(params[:uni]), :class => 'btn btn-secondary' %>
 <% end %>

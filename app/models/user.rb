@@ -5,10 +5,8 @@ class User < ActiveRecord::Base
 
   validates :uni, uniqueness: true,  presence: true#ensure uni is not nil or blank #Ref:https://blog1.westagilelabs.com/rails-active-record-validations-part-2-68677fc0e8ab
   validates :uname, presence: true#ensure uname is not nil or blank
-  validates :password, confirmation: true,:on =>
-    :create #if: :password_required? #ensure that the value passed in the password attribute matches the password_confirmation attribute
-  validates :password_confirmation, presence: true,:on =>
-    :create# if: :password_required? #ensures that password_confirmation is present iff password is typed in
+  validates :password, confirmation: true,:on => :create #if: :password_required? #ensure that the value passed in the password attribute matches the password_confirmation attribute
+  validates :password_confirmation, presence: true,:on => :create# if: :password_required? #ensures that password_confirmation is present iff password is typed in
   # validates :email, presence: true,
   #           format: { with: /\S+@\S+/ },
   #           uniqueness: { case_sensitive: false }

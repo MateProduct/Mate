@@ -14,6 +14,8 @@ group :development, :test do
   gem 'ZenTest', '4.11.2'
 end
 
+gem 'factory_bot_rails'
+
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
