@@ -13,6 +13,12 @@ jc5897 Jiawen Chu
  $ rails server
 ```
 
+if you want to run cucumber test:
+
+```
+$ bundle excu cucumber
+```
+
 ## Progress Log
 </details>
 

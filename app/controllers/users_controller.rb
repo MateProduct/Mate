@@ -37,13 +37,6 @@ class UsersController < ApplicationController
       flash[:notice] = "#{uni} hasn't been signup. Please signup first"
         redirect_to signup_path
     end
-    # if @user
-    #   if password == @user.password
-    #
-    #   end
-    # else
-    #
-    # end
   end
 
   def create#_user
