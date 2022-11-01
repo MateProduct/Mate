@@ -19,11 +19,13 @@ Scenario: fill the wrong password (sad path)
   And I fill in "UNI" with "aa1000"
   And I fill in "Password" with "111111"
   And I press "Sign in"
-  Then I should see ""
-#
-#Scenario: Registered user try to sign up again (sad path)
-#  When I go to the signup page
-#  And I fill in "UNI" with "aa1000"
-#  And I press "Sign up"
-#  Then I should see "Uni has already been taken"
+  Then I should see "Invalid password. Please try again."
+
+Scenario: trying to sigin without registered (sad path)
+  When I go to the signin page
+  And I fill in "UNI" with "lx2301"
+  And I fill in "Password" with "111111"
+  And I press "Sign in"
+  Then I should see "lx2301 hasn't been signup. Please signup first"
+  And I should be on the signup page
 
