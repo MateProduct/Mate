@@ -111,7 +111,17 @@ None
 
 <details>
 <summary>Group</summary>
- 
+
+#### Done
+<blockquote>
+For deployment on Heroku:
+
+* bundle version needs to be 1.17.3 (<a href="https://stackoverflow.com/a/9725864/19843708">Downgrade</a> steps if needed)
+* Change sqlite3 to postgresql (<a href="https://devcenter.heroku.com/articles/sqlite3">Instructions</a>)
+* Add /bin directory (<a href="https://stackoverflow.com/questions/17704754/heroku-app-crash-h10-bash-bin-rails-no-such-file-or-directory">Fix for Heroku app Crash H10</a>)
+* Regenerated a migration file to cover all needed columns.
+ </blockquote>
+
 #### To DO (next iteration):
 - [ ] Can check this: <a href="https://dev.to/kjdowns/creating-a-user-login-system-ruby-on-rails-2kl2">StackOverflow</a> for checking uid of logged-in user
 - [ ] Coverage for private user_params <a href="https://stackoverflow.com/questions/24292162/how-to-test-strong-params-with-rspec">How to test strong params with Rspec?</a>
