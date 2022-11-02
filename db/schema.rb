@@ -11,20 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221029205120) do
+ActiveRecord::Schema.define(version: 20221102051605) do
 
-  create_table "users", id: false, force: :cascade do |t|
-    t.string   "uni",         null: false
+  create_table "users", force: :cascade do |t|
+    t.string   "uni"
     t.string   "password"
     t.string   "uname"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.string   "lionmail"
     t.string   "phone"
     t.string   "contact"
     t.string   "time_slot"
     t.text     "description"
     t.text     "skills"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
+  add_index "users", ["uni"], name: "index_users_on_uni"
 
 end
