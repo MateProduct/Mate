@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-  def show
-    uni = params[:id] # retrieve user ID(uni) from URI route
-    @user = User.find(uni) # look up user by unique ID
-    # # will render app/views/users/show.<extension> by default
-  end
+  # def show
+  #   uni = params[:id] # retrieve user ID(uni) from URI route
+  #   @user = User.find(uni) # look up user by unique ID
+  #   # # will render app/views/users/show.<extension> by default
+  # end
 
   def index
 
