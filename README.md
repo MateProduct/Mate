@@ -13,12 +13,22 @@
  $ rails server
 ```
 
+
+## How to test this program
+
 if you want to run cucumber test:
 
 ```
 $ bundle excu cucumber
 ```
 
+if you want to run Rspec test:
+
+```
+$ bundle excu rspec
+```
+
+After running two kinds of test above, you can run ``index.html`` file to see the coverage. 
 ## Progress Log
 
 
@@ -65,11 +75,13 @@ $ bundle excu cucumber
  
 #### Done
 * Completed user signin funtion and password verification
+* Wrote cucumber test for user login
+* Wrote Rspec test for user login
+* deploy the product to heroku
 
-#### To DO:
-- [ ] Write Cucumber
-- [ ] Write Rspec tests
-`
+#### To DO(next iteration):
+None
+
 </blockquote>
 </details>
 
