@@ -2,7 +2,6 @@
 rottenpotatoes/db/schema.rb
 /lib/tasks/
 
-rottenpotatoes/vendor/bundle
 
 
 # Ignore bundler config.
