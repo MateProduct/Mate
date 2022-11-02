@@ -1,18 +1,20 @@
-rottenpotatoes/.bundle/
-rottenpotatoes/.rspec
-rottenpotatoes/.ruby-version
-rottenpotatoes/coverage/
-rottenpotatoes/db/*.sqlite3
+
 rottenpotatoes/db/schema.rb
-rottenpotatoes/lib/tasks/
-rottenpotatoes/log/
-rottenpotatoes/tmp/
+/lib/tasks/
+
 rottenpotatoes/vendor/bundle
 
-tmp/cache/assets/sprockets/v3.0
-tmp/cache/assets/sprockets/v3.0
-log/development.log
-tmp/pids
-log
 
-coverage
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+log
+.byebug_history

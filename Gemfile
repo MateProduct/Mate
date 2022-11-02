@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 ruby '2.6.6'
-gem 'rails', '4.2.10'
+gem 'rails', '4.2.11'
+
 
 # for Heroku deployment 
 group :development, :test do
@@ -10,7 +11,7 @@ group :development, :test do
   gem 'database_cleaner', '1.4.1'
   gem 'capybara', '2.4.4'
   gem 'launchy'
-  gem 'rspec-rails', '3.7.2'
+  gem 'rspec-rails'
   gem 'ZenTest', '4.11.2'
 end
 
@@ -22,7 +23,8 @@ group :test do
   gem 'simplecov', :require => false
 end
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.21' # for Heroku deployment
+  gem 'rails_12factor'
 end
 
 # Gems used only for assets and not required
