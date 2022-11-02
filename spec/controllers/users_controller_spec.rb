@@ -45,6 +45,34 @@ describe UsersController do
     end
   end
 
+  describe 'POST /signin  #checkpwd' do
+    # it 'should call Movie.create' do
+    #   expect(User).to receive(:create).with(FactoryBot.attributes_for(:user))
+    # end
+    let!(:user) {FactoryBot.create(:user)}
+    context 'sign in with a registered account' do
+      it 'sign in successfully, should render to the course page'do
+        post :checkpwd, user: FactoryBot.attributes_for(:user)
+        expect(response).to redirect_to(course_path(user.id))
+      end
+    end
+
+    context 'sign in with a not registered account' do
+      it 'sign in unsuccessfully, should render to the signup page'do
+        post :checkpwd,user: FactoryBot.attributes_for(:user, uni:"lx2301")
+        expect(response).to redirect_to(signup_path())
+      end
+    end
+
+    context 'sign in with a wrong password' do
+      it 'sign in unsuccessfully, should render back to signin page'do
+        post :checkpwd, user: FactoryBot.attributes_for(:user, password:"54321")
+        expect(response).to redirect_to(signin_path())
+      end
+    end
+
+  end
+
   describe 'GET /users/:id  #show' do
     let!(:user) {FactoryBot.create(:user)}
 
