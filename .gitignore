@@ -18,3 +18,5 @@ rottenpotatoes/vendor/bundle
 /tmp
 log
 .byebug_history
+heroku_ssh_rsa
+heroku_ssh_rsa.pub
