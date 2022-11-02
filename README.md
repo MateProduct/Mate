@@ -1,10 +1,10 @@
 ## Uni
 
-<details open>
+- Jiawen Chu:  jc5897
+- Zeyu Zhang:  zz2941
+- Shiyu Li:  sl4684
+- Lei Xu:  lx2301
 
-lx2301 Lei Xu
-
-jc5897 Jiawen Chu
 ## How to run this program
 
 ```
@@ -20,7 +20,7 @@ $ bundle excu cucumber
 ```
 
 ## Progress Log
-</details>
+
 
 <details >
 <summary>User Sign Up</summary>
