@@ -4,7 +4,6 @@ class CreateCourses < ActiveRecord::Migration
       t.string :course_no
       t.string :uni
       t.string :section_no
-      t.string :int
 
       t.timestamps null: false
     end
