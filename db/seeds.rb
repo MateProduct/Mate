@@ -16,6 +16,7 @@ users = [{:uni => 'aa1000', :password => '123456', :password_confirmation=> '123
 					{:uni => 'aa1700', :password => '1234567890', :password_confirmation=> '1234567890', :uname => 'aa1700', :lionmail => 'aa1700@columbia.edu', :phone => '123-456-7899', :contact => '', :time_slot => 'Sunday', :description => 'Null', :skills => 'Ruby'},
   	 ]
 
+
 users.each do |user|
   User.create!(user)
 end
