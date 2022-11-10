@@ -10,4 +10,7 @@ Rottenpotatoes::Application.routes.draw do
   get "/course/:uni", to:"users#course", as: :course
   post "/signin", to:"users#checkpwd"
   get "/signin", to:"users#signin"
+  resources :courses
+  get "/add_course/:uni", to:"courses#addcourse"
+  post "/add_course/:uni", to:"courses#add_course", as: :add_course
 end

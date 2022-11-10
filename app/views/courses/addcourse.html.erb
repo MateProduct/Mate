@@ -1,0 +1,17 @@
+<h2>Add a new course</h2>
+
+<%= form_tag add_course_path(params[:uni]), :class => 'form' do %>
+<!--   add uni in the params so that we can redirect to the right page-->
+  <%= label :course, :uni, 'UNI', :class => 'col-form-label' %>
+  <%= text_field :course, :uni, :class => 'form-control  col-2' %>
+
+  <%= label :course, :course_no, 'Course Code: e.g. COMSW4152', :class => 'col-form-label' %>
+  <%= text_field :course, :course_no, :class => 'form-control  col-2' %>
+
+  <%= label :course, :section_no, 'Section Number: e.g. 001,002,003', :class => 'col-form-label' %>
+  <%= text_field :course, :section_no, :class => 'form-control  col-2' %>
+
+  <br/>
+  <%= submit_tag 'Submit', :class => 'btn btn-primary' %>
+  <%= link_to 'Cancel', course_path(params[:uni]), :class => 'btn btn-secondary' %>
+<% end %>

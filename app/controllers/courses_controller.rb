@@ -6,14 +6,17 @@ class CoursesController < ApplicationController
   # def show
   #   @course = Course.find(params[:id])
   # end
+  def  addcourse
+  end
   def add_course
-    @course = Course.create(uni: params[:uni], course_no: params[:course_no], section_no: params[:section_no])
+    course_params[:uni] = params[:uni]
+    @course = Course.create( course_params)
     if @course.valid?
       flash[:notice] = "Course added successfully."
       redirect_to course_path(params[:uni])
     else
       flash[:warning] = "Course add failed: "<< @course.errors.full_messages.join("; ")
-      redirect_to course_path(params[:uni])
+      render :action => 'addcourse'
     end
   end
   def course_params
