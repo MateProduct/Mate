@@ -15,8 +15,24 @@ users = [{:uni => 'aa1000', :password => '123456', :password_confirmation=> '123
 					{:uni => 'aa1600', :password => '123', :password_confirmation=> '123', :uname => 'aa1600', :lionmail => 'aa1600@columbia.edu', :phone => '232-456-7890', :contact => '', :time_slot => 'Saturday', :description => 'Null', :skills => 'Ruby'},
 					{:uni => 'aa1700', :password => '1234567890', :password_confirmation=> '1234567890', :uname => 'aa1700', :lionmail => 'aa1700@columbia.edu', :phone => '123-456-7899', :contact => '', :time_slot => 'Sunday', :description => 'Null', :skills => 'Ruby'},
   	 ]
+courses = [
+           {:course_no => 'COMSW4152', :uni => 'aa1000', :section_no => '001'},
+					 {:course_no => 'COMSW4152', :uni => 'aa1100', :section_no => '001'},
+					 {:course_no => 'COMSW4152', :uni => 'aa1200', :section_no => '001'},
+					 {:course_no => 'COMSW4152', :uni => 'aa1300', :section_no => '001'},
+					 {:course_no => 'COMSW4152', :uni => 'aa1400', :section_no => '001'},
+					 {:course_no => 'COMSW4152', :uni => 'aa1500', :section_no => '001'},
+					 {:course_no => 'COMSW4152', :uni => 'aa1600', :section_no => '002'},
+					 {:course_no => 'COMSW4152', :uni => 'aa1700', :section_no => '002'},
 
+					 {:course_no => 'COMSW4111', :uni => 'aa1000', :section_no => '001'},
+					 {:course_no => 'COMSE6156', :uni => 'aa1100', :section_no => '001'},
+]
 
 users.each do |user|
   User.create!(user)
+end
+
+courses.each do |course|
+  Course.create!(course)
 end
