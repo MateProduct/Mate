@@ -113,6 +113,106 @@
     <LOAD_PATH number="0" />
     <I18N_FOLDERS number="1" string0="$MODULE_DIR$/config/locales" />
   </component>
+  <component name="RailsGeneratorsCache">
+    <option name="generators">
+      <list>
+        <option value="active_record:migration" />
+        <option value="active_record:model" />
+        <option value="assets" />
+        <option value="controller" />
+        <option value="cucumber:install" />
+        <option value="cucumber_rails_training_wheels:feature" />
+        <option value="cucumber_rails_training_wheels:install" />
+        <option value="factory_bot:model" />
+        <option value="generator" />
+        <option value="helper" />
+        <option value="integration_test" />
+        <option value="job" />
+        <option value="js:assets" />
+        <option value="mailer" />
+        <option value="migration" />
+        <option value="model" />
+        <option value="resource" />
+        <option value="rspec:channel" />
+        <option value="rspec:controller" />
+        <option value="rspec:feature" />
+        <option value="rspec:generator" />
+        <option value="rspec:helper" />
+        <option value="rspec:install" />
+        <option value="rspec:integration" />
+        <option value="rspec:job" />
+        <option value="rspec:mailbox" />
+        <option value="rspec:mailer" />
+        <option value="rspec:model" />
+        <option value="rspec:request" />
+        <option value="rspec:scaffold" />
+        <option value="rspec:view" />
+        <option value="scaffold" />
+        <option value="scaffold_controller" />
+        <option value="scss:assets" />
+        <option value="scss:scaffold" />
+        <option value="task" />
+        <option value="test_unit:controller" />
+        <option value="test_unit:generator" />
+        <option value="test_unit:helper" />
+        <option value="test_unit:integration" />
+        <option value="test_unit:job" />
+        <option value="test_unit:mailer" />
+        <option value="test_unit:model" />
+        <option value="test_unit:plugin" />
+        <option value="test_unit:scaffold" />
+      </list>
+    </option>
+    <option name="myGenerators">
+      <list>
+        <option value="active_record:migration" />
+        <option value="active_record:model" />
+        <option value="assets" />
+        <option value="controller" />
+        <option value="cucumber:install" />
+        <option value="cucumber_rails_training_wheels:feature" />
+        <option value="cucumber_rails_training_wheels:install" />
+        <option value="factory_bot:model" />
+        <option value="generator" />
+        <option value="helper" />
+        <option value="integration_test" />
+        <option value="job" />
+        <option value="js:assets" />
+        <option value="mailer" />
+        <option value="migration" />
+        <option value="model" />
+        <option value="resource" />
+        <option value="rspec:channel" />
+        <option value="rspec:controller" />
+        <option value="rspec:feature" />
+        <option value="rspec:generator" />
+        <option value="rspec:helper" />
+        <option value="rspec:install" />
+        <option value="rspec:integration" />
+        <option value="rspec:job" />
+        <option value="rspec:mailbox" />
+        <option value="rspec:mailer" />
+        <option value="rspec:model" />
+        <option value="rspec:request" />
+        <option value="rspec:scaffold" />
+        <option value="rspec:view" />
+        <option value="scaffold" />
+        <option value="scaffold_controller" />
+        <option value="scss:assets" />
+        <option value="scss:scaffold" />
+        <option value="task" />
+        <option value="test_unit:controller" />
+        <option value="test_unit:generator" />
+        <option value="test_unit:helper" />
+        <option value="test_unit:integration" />
+        <option value="test_unit:job" />
+        <option value="test_unit:mailer" />
+        <option value="test_unit:model" />
+        <option value="test_unit:plugin" />
+        <option value="test_unit:scaffold" />
+      </list>
+    </option>
+  </component>
   <component name="RakeTasksCache">
     <option name="myRootTask">
       <RakeTaskImpl id="rake">
