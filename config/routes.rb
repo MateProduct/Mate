@@ -13,4 +13,5 @@ Rottenpotatoes::Application.routes.draw do
   resources :courses
   get "/add_course/:uni", to:"courses#addcourse"
   post "/add_course/:uni", to:"courses#add_course", as: :add_course
+  get "/course_sec/:uni/:course/:sec", to:"courses#course_sec", as: :course_sec
 end
