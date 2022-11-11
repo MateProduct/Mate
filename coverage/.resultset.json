@@ -17,6 +17,59 @@
           null
         ]
       },
+      "/Users/ruirui/codes/4152/Mate/Mate/app/controllers/courses_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/ruirui/codes/4152/Mate/Mate/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
       "/Users/ruirui/codes/4152/Mate/Mate/app/controllers/users_controller.rb": {
         "lines": [
           1,
@@ -120,15 +173,6 @@
           null
         ]
       },
-      "/Users/ruirui/codes/4152/Mate/Mate/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
       "/Users/ruirui/codes/4152/Mate/Mate/app/models/course.rb": {
         "lines": [
           1,
@@ -172,55 +216,9 @@
           null,
           null
         ]
-      },
-      "/Users/ruirui/codes/4152/Mate/Mate/app/controllers/courses_controller.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1668185029
+    "timestamp": 1668202881
   },
   "Cucumber Features": {
     "coverage": {
