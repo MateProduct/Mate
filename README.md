@@ -20,13 +20,13 @@
 if you want to run cucumber test:
 
 ```
-$ bundle excu cucumber
+$ bundle exec cucumber
 ```
 
 if you want to run Rspec test:
 
 ```
-$ bundle excu rspec
+$ bundle exec rspec
 ```
 
 After running two kinds of test above, you can run ``index.html`` file to see the coverage. 
