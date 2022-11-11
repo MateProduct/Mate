@@ -2,8 +2,10 @@
 
 <%= form_tag add_course_path(params[:uni]), :class => 'form' do %>
 <!--   add uni in the params so that we can redirect to the right page-->
-  <%= label :course, :uni, 'UNI', :class => 'col-form-label' %>
-  <%= text_field :course, :uni, :class => 'form-control  col-2' %>
+  <%#= label :course, :uni, 'UNI', :class => 'col-form-label' %>
+  <%#= text_field :course, :uni, :class => 'form-control  col-2' %>
+
+  <%= hidden_field :course, :uni, value: params[:uni] ,  :class => 'form-control  col-2'%>
 
   <%= label :course, :course_no, 'Course Code: e.g. COMSW4152', :class => 'col-form-label' %>
   <%= text_field :course, :course_no, :class => 'form-control  col-2' %>

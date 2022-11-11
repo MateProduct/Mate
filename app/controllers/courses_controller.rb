@@ -10,7 +10,6 @@ class CoursesController < ApplicationController
   end
 
   def add_course
-    course_params[:uni] = params[:uni]
     @course = Course.create( course_params)
     if @course.valid?
       flash[:notice] = "Course added successfully."
