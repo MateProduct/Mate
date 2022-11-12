@@ -7,10 +7,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :lionmail
       t.string :phone
       t.string :contact
-      t.string :time_slot
+      t.string :time_slot, :default =>''
       t.text :description
-      t.text :skills
-
+      t.text :skills, :default =>''
       t.timestamps null: false
     end
     add_index :users, :uni

@@ -13,6 +13,12 @@
  $ bundle exec rake db:migrate                                      
  $ rails server
 ```
+- If Database was created and you have modified it
+```
+$ bundle exec rake db:drop db:create db:migrate
+$ bundle exec rake db:seed                                     
+$ rails server
+```
 
 
 ## How to test this program
