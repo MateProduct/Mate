@@ -232,7 +232,7 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/models/course.rb": {
+      "/Users/jwchu/Desktop/W4152/Mate/app/models/course.rb": {
         "lines": [
           1,
           null,
@@ -245,7 +245,7 @@
           null
         ]
       },
-      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/models/user.rb": {
+      "/Users/jwchu/Desktop/W4152/Mate/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -257,6 +257,8 @@
           null,
           null,
           null,
+          1,
+          1,
           null,
           null,
           1,
@@ -283,7 +285,7 @@
           null
         ]
       },
-      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/controllers/users_controller.rb": {
+      "/Users/jwchu/Desktop/W4152/Mate/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -347,6 +349,7 @@
           1,
           null,
           null,
+          1,
           1,
           1,
           1,
@@ -360,6 +363,14 @@
           null,
           1,
           6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          null,
           null,
           null,
           1,
@@ -387,7 +398,7 @@
           null
         ]
       },
-      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/controllers/application_controller.rb": {
+      "/Users/jwchu/Desktop/W4152/Mate/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -396,13 +407,13 @@
           null
         ]
       },
-      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/helpers/application_helper.rb": {
+      "/Users/jwchu/Desktop/W4152/Mate/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/helpers/users_helper.rb": {
+      "/Users/jwchu/Desktop/W4152/Mate/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null,
@@ -412,7 +423,7 @@
           null
         ]
       },
-      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/controllers/courses_controller.rb": {
+      "/Users/jwchu/Desktop/W4152/Mate/app/controllers/courses_controller.rb": {
         "lines": [
           1,
           null,
@@ -437,15 +448,18 @@
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           0,
           null,
-          0,
           null,
-          0,
-          0,
-          0,
+          null,
           0,
           null,
           null,
@@ -457,6 +471,6 @@
         ]
       }
     },
-    "timestamp": 1668222191
+    "timestamp": 1668280931
   }
 }

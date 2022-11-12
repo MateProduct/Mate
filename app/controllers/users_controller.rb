@@ -75,6 +75,7 @@ class UsersController < ApplicationController
   def course
     @user = User.find params[:uni]
     @uni = params[:uni]
+    session[:uni] = @uni
     courses= Course.where(uni:@uni).pluck(:course_no, :section_no)
     @course_list=[]
     courses.each { |course_no, section_no|
