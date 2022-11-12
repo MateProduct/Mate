@@ -61,7 +61,9 @@ class UsersController < ApplicationController
     # @user = User.find params[:uni]
   end
   def profile
-
+    @all_times = User.all_times
+    @all_skills = User.all_skills
+    @user = User.find params[:uni]
   end
   def update
     @user = User.find params[:uni]
@@ -97,7 +99,7 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit(:uni,:uname, :lionmail, :phone, :contact, :time_slot, :description, :skills)
+    params.require(:user).permit(:uni, :uname, :lionmail, :phone, :contact, {time_slot:[]}, :description, {skills:[]})
   end
 
   def create_user_params

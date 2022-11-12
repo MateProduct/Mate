@@ -1,47 +1,33 @@
 <h2>Edit Profile</h2>
 
 <%= form_tag profile_path(params[:uni]),  :method => :put do %>
-  <%#= label :user, :uni, 'UNI', :class => 'col-form-label' %>
-  <%#= text_field :user, :uni, :class => 'form-control' %>
+  <%= label :user, :uname, 'User name', :class => 'col-form-label' %>
+  <%= text_field :user, :uname, :class => 'form-control', placeholder: @user.uname %>
   <%= label :user, :lionmail, 'Lionmail', :class => 'col-form-label' %>
-  <%= text_field :user, :lionmail, :class => 'form-control' %>
+  <%= text_field :user, :lionmail, :class => 'form-control', placeholder: @user.lionmail %>
   <%= label :user, :phone, 'Phone', :class => 'col-form-label' %>
-  <%= text_field :user, :phone, :class => 'form-control' %>
-  <%= label :user, :contact, 'Contact', :class => 'col-form-label' %>
-  <%= text_field :user, :contact, :class => 'form-control' %>
-  <%= label :user, :time_slot, 'Available time slot', :class => 'col-form-label'  %>
-  <%#= form_tag movie_path, :method => 'get' do %>
-  <!--    <div class="checkbox">-->
-  <!--      <td>-->
-  <%#= label_tag(:time1, "Monday") %>
-  <%#= check_box 'time1', 'result', {}, 1, 0 %>
-
-  <%#= label_tag(:time2, "Tuesday") %>
-  <%#= check_box 'time2', 'result', {}, 1, 0 %>
-
-  <%#= label_tag(:time3, "Wednesday") %>
-  <%#= check_box 'time3', 'result', {}, 1, 0 %>
-
-  <%#= label_tag(:time4, "Thursday") %>
-  <%#= check_box 'time4', 'result', {}, 1, 0 %>
-
-  <%#= label_tag(:time5, "Friday") %>
-  <%#= check_box 'time5', 'result', {}, 1, 0 %>
-
-  <%#= label_tag(:time6, "Saturday") %>
-  <%#= check_box 'time6', 'result', {}, 1, 0 %>
-
-  <%#= label_tag(:time7, "Sunday") %>
-  <%#= check_box 'time7', 'result', {}, 1, 0 %>
-  <!--      </td>-->
-  <!--    </div>-->
-  <%# end %>
-  <%= select :user, :time_slot, ['Monday','Tuesday','Wednesday','Thursday','Friday', 'Saturday', 'Sunday'], {}, {:class => 'form-control col-2'} %>
-  <%#= select :movie, :time_slot, ['Morning', 'Afternoon', 'Evening'], {}, {:class => 'form-control col-2'} %>
+  <%= text_field :user, :phone, :class => 'form-control', placeholder: @user.phone%>
+  <%= label :user, :contact, 'Contact   e.g. "WhatsApp: id..." ', :class => 'col-form-label' %>
+  <%= text_field :user, :contact, :class => 'form-control', placeholder: @user.contact%>
+  <%= label :user, :time_slot, 'Available time slot: ', :class => 'col-form-label'  %>
+  <br/>
+  <% @all_times.each do |time| %>
+    <div class="form-check  form-check-inline">
+      <%= label_tag "user[time_slot][]", time, class: 'form-check-label' %>
+      <%= check_box_tag "user[time_slot][]", time, (@user.time_slot.include?(time)), class: 'form-check-input' %>
+    </div>
+  <% end %>
+  <br/>
   <%= label :user, :description, 'About Me', :class => 'col-form-label' %>
-  <%= text_field :user, :description, :class => 'form-control' %>
+  <%= text_field :user, :description, :class => 'form-control', placeholder: @user.description %>
   <%= label :user, :skills, 'Skills', :class => 'col-form-label' %>
-  <%= text_field :user, :skills, :class => 'form-control' %>
+  <br/>
+  <% @all_skills.each do |skill| %>
+    <div class="form-check  form-check-inline">
+      <%= label_tag "user[skills][]", skill, class: 'form-check-label' %>
+      <%= check_box_tag "user[skills][]", skill, (@user.skills.include?(skill)), class: 'form-check-input' %>
+    </div>
+  <% end %>
   <br/>
   <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
   <%= link_to 'Courses', course_path(params[:uni]), :class => 'btn btn-secondary' %>

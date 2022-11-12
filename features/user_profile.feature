@@ -5,16 +5,16 @@ Feature: edit personal profile
 
 Background: users in the database
   Given the following users exist:
-    | uni          | uname     | lionmail            |   time_slot  | password     | password_confirmation  |
-    | aa1000       | aa1000    | aa1000@columbia.edu |   Monday     | 123456       | 123456                 |
-    | aa1100       | aa1100    | aa1100@columbia.edu |   Tuesday    | 123456       | 123456                 |
+    | uni          | uname     | lionmail            |   time_slot       | password     | password_confirmation  |
+    | aa1000       | aa1000    | aa1000@columbia.edu |   Mon Morning     | 123456       | 123456                 |
+    | aa1100       | aa1100    | aa1100@columbia.edu |   Tues Morning    | 123456       | 123456                 |
 
-Scenario: change user aa1000 available time to Tuesday
+Scenario: change user aa1000 available time to Tuesday Morning and Tuesday Afternoon
   Given I am on the course page for "aa1000"
   When  I follow "Edit profile"
   Then  I should be on the edit profile page for "aa1000"
-  And   I select "Tuesday" from "Available time slot"
+  When  I fill in "Phone" with "123456789"
   And   I press "Save Changes"
   Then  I should be on the course page for "aa1000"
-  Then  I should see "Available Time: Tuesday"
+  Then  I should see "123456789"
 
