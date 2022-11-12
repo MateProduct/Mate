@@ -45,7 +45,6 @@
 <h2>My Courses:</h2>
 <div class="list-group" id="listGroup">
   <% @course_list.each do |course|%>
-<!--    <div class="list-group">-->
       <button class="list-group-item list-group-item-action" type="button">
         <ul class="list-group list-group-horizontal">
           <li class="list-group-item"><%= course['course_no'] %></li>
@@ -53,11 +52,10 @@
           <li class="list-group-item"><%= link_to 'Details', course_sec_path(params[:uni], course['course_no'], course['section_no'])%></li>
         </ul>
       </button>
-<!--    </div>-->
   <% end %>
 </div>
+
 <%= form_tag  course_path, :class => 'form' do %>
-  <%#= submit_tag 'Edit Profile', :class => 'btn btn-primary' %>
   <%= link_to 'Edit profile', profile_path(params[:uni]), :class => 'btn btn-primary' %>
   <%= link_to 'Add Course', add_course_path(params[:uni]), :class => 'btn btn-primary' %>
   <%= link_to 'Sign out', users_path, :class => 'btn btn-secondary' %>
