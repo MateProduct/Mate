@@ -72,6 +72,14 @@ class UsersController < ApplicationController
 
   def course
     @user = User.find params[:uni]
+    @uni = params[:uni]
+    courses= Course.where(uni:@uni).pluck(:course_no, :section_no)
+    @course_list=[]
+    courses.each { |course_no, section_no|
+      # course_info = Course.find(course_no, section_no)
+      course_info = { 'course_no' => course_no, 'section_no' => section_no }
+      @course_list.append(course_info)
+    }
   end
 
   def destroy
