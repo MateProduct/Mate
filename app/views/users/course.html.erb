@@ -49,7 +49,7 @@
         <ul class="list-group list-group-horizontal">
           <li class="list-group-item"><%= course['course_no'] %></li>
           <li class="list-group-item"><%= course['section_no'] %></li>
-          <li class="list-group-item"><%= link_to 'Details', course_sec_path(params[:uni], course['course_no'], course['section_no'])%></li>
+          <li class="list-group-item"><%= link_to 'Find Mates', course_sec_path(params[:uni], course['course_no'], course['section_no'])%></li>
         </ul>
       </button>
   <% end %>
