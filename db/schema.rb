@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 20221109153404) do
     t.string   "lionmail"
     t.string   "phone"
     t.string   "contact"
-    t.string   "time_slot"
+    t.string   "time_slot",   default: ""
     t.text     "description"
-    t.text     "skills"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "skills",      default: ""
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "users", ["uni"], name: "index_users_on_uni"

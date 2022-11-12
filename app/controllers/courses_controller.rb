@@ -29,7 +29,9 @@ class CoursesController < ApplicationController
     # classmates = {'uni': uni, 'uname':uname, 'lionmail':lionmail, 'phone':phone, 'contact': contact, 'timeslot': timeslot, 'description':description, 'skills':skills}
     for uni in enrolled
       student_info = User.find(uni)
-      info_hash = {'uni'=>student_info['uni'], 'uname'=>student_info['uname'],'lionmail'=>student_info['lionmail'], 'phone'=>student_info['phone'], 'contact'=>student_info['contact'], 'timeslot'=>student_info['timeslot'], 'description'=>student_info['description'], 'skills'=>student_info['skills'] }
+      # print("student info:", student_info.inspect)
+      # info_hash = {'uni'=>student_info['uni'], 'uname'=>student_info['uname'],'lionmail'=>student_info['lionmail'], 'phone'=>student_info['phone'], 'contact'=>student_info['contact'], 'time_slot'=>student_info['time_slot'], 'description'=>student_info['description'], 'skills'=>student_info['skills'] }
+      # print("info hash:", info_hash)
       @classmates.append(student_info)
       end
   end

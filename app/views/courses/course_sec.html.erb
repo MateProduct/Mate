@@ -16,7 +16,7 @@
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="<%='#panelsStayOpen-collapse'<<mate['uni'].to_s %>" aria-expanded="true" aria-controls="<%='panelsStayOpen-collapse'<<mate['uni'].to_s %>">
         <ul class="list-group list-group-horizontal">
           <li class="list-group-item"><%= mate['uname'] %></li>
-          <li class="list-group-item"><%= mate['timeslot'] %></li>
+          <li class="list-group-item"><%= mate['time_slot'] %></li>
           <li class="list-group-item"><%= mate['skills'] %></li>
         </ul>
       </button>
@@ -43,5 +43,5 @@
   <% end %>
 </div>
 <br>
-<%= link_to 'Courses', course_path(params[:uni]), :class => 'btn btn-primary' %>
+<%= link_to 'Profile & Courses', course_path(params[:uni]), :class => 'btn btn-primary' %>
 <%= link_to 'Add Course', add_course_path(params[:uni]), :class => 'btn btn-primary' %>
