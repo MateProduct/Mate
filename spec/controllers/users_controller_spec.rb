@@ -89,6 +89,7 @@ describe UsersController do
 
   describe 'GET /course/:uni #course' do
     let!(:user) {FactoryBot.create(:user)}
+    let!(:course) {FactoryBot.create(:course)}
     it 'should find the user' do
       get :course, uni: user.uni
       expect(assigns(:user)).to eql(user)
@@ -97,6 +98,11 @@ describe UsersController do
     it 'should render course page' do
       get :course, uni: user.uni
       expect(response).to render_template('course')
+    end
+
+    it 'should find corresponding courses' do
+      get :course, uni: user.uni
+      expect(assigns(:course)).to eql(course)
     end
   end
 
