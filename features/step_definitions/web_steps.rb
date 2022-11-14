@@ -41,6 +41,10 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
 
+Given /I am on the course_sec page with course_no "(.*)" sec_no "(.*)"/ do |e1,e2|
+  course_sec_path(e1,e2)
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
