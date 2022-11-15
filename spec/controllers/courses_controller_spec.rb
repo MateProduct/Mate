@@ -20,7 +20,12 @@ describe CoursesController do
   end
 
   describe 'GET /course_sec/:course_no/:sec_no #course_src' do
-    context ''
+    let!(:user) {FactoryBot.create(:user)}
+    let!(:course) {FactoryBot.create(:course)}
+    it 'should show the users who have enrolled in the same section' do
+      get :course_sec, course_no: course.course_no, sec_no: course.section_no
+      expect(response).to include {user}
+    end
   end
 
 
