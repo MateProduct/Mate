@@ -102,7 +102,7 @@ describe UsersController do
 
     it 'should find corresponding courses' do
       get :course, uni: user.uni
-      expect(assigns(:course)).to eql(course)
+      expect(assigns(:course_list).size).to eql(1)
     end
   end
 
