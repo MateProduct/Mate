@@ -17,7 +17,7 @@ Background: this user have added current course_sec pair into profile
     | aa1200       | UserName3    | aa1200@columbia.edu |   Fri Afternoon   | 123456       | 123456                 | Wechat: aa1200  |  Undergrad senior             | 781-578-9816  | SQL
 
   Scenario: See all students' info who have enrolled in the same course and same section
-    Given I'm on the course_sec page of course_no "COMSW4152" sec_no "001"
+    Given I am on the course_sec page of course_no "COMSW4152" sec_no "001" with uni "aa1000"
     Then I should see "Here are Mates for your class!"
     Then I should see "UserName1"
     And I should see "UserName2"

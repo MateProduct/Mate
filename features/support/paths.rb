@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the course page for "(.*)"/ then course_path($1)
     when /^the edit profile page for "(.*)"/ then profile_path($1)
-    # when /^the sec page of course_no "(.*)" sec_no "(.*)"/ then course_sec_path($1,$2)
+    when /^the course_sec page of course_no "(.*)" sec_no "(.*)" with uni "(.*)"/ then course_sec_path($3,$1,$2)
 
 
     # Add more mappings here.
