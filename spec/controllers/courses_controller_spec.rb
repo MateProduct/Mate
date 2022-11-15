@@ -19,5 +19,9 @@ describe CoursesController do
     end
   end
 
+  describe 'GET /course_sec/:course_no/:sec_no #course_src' do
+    context ''
+  end
+
 
 end
