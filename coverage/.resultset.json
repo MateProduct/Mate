@@ -244,7 +244,7 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/jwchu/Desktop/W4152/Mate/app/models/course.rb": {
+      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/models/course.rb": {
         "lines": [
           1,
           null,
@@ -257,7 +257,7 @@
           null
         ]
       },
-      "/Users/jwchu/Desktop/W4152/Mate/app/models/user.rb": {
+      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -297,7 +297,7 @@
           null
         ]
       },
-      "/Users/jwchu/Desktop/W4152/Mate/app/controllers/users_controller.rb": {
+      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -410,7 +410,7 @@
           null
         ]
       },
-      "/Users/jwchu/Desktop/W4152/Mate/app/controllers/application_controller.rb": {
+      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -419,13 +419,13 @@
           null
         ]
       },
-      "/Users/jwchu/Desktop/W4152/Mate/app/helpers/application_helper.rb": {
+      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/jwchu/Desktop/W4152/Mate/app/helpers/users_helper.rb": {
+      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null,
@@ -435,7 +435,7 @@
           null
         ]
       },
-      "/Users/jwchu/Desktop/W4152/Mate/app/controllers/courses_controller.rb": {
+      "/mnt/d/Columbia/Fall2022/COMS4152/Mate/app/controllers/courses_controller.rb": {
         "lines": [
           1,
           null,
@@ -460,19 +460,19 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
           null,
-          0,
+          1,
           null,
-          0,
-          0,
+          1,
+          2,
           null,
           null,
           null,
-          0,
+          2,
           null,
           null,
           null,
@@ -483,6 +483,6 @@
         ]
       }
     },
-    "timestamp": 1668460185
+    "timestamp": 1668550537
   }
 }
