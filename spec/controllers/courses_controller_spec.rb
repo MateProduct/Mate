@@ -23,7 +23,7 @@ describe CoursesController do
     let!(:user) {FactoryBot.create(:user)}
     let!(:course) {FactoryBot.create(:course)}
     it 'should show the users who have enrolled in the same section' do
-      get :course_sec, course_no: course.course_no, sec_no: course.section_no
+      get :course_sec, course_no: course.course_no, sec_no: course.section_no, uni:user.uni
       expect(response).to include {user}
     end
   end
