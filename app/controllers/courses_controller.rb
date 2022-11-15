@@ -21,8 +21,8 @@ class CoursesController < ApplicationController
   end
 
   def course_sec
-    @course_no = params[:course]
-    @sec_no = params[:sec]
+    @course_no = params[:course_no]
+    @sec_no = params[:sec_no]
     @uni = session[:uni]
     enrolled= Course.where(course_no:@course_no, section_no:@sec_no).pluck(:uni)
     # print("This is students found in course:",course_no, " sec:", sec_no," :",enrolled)
