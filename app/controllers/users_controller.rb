@@ -24,18 +24,26 @@ class UsersController < ApplicationController
   def checkpwd
     uni = user_params[:uni]
     password = user_params[:password]
-
-    @user = User.find_by(uni: uni)
-    if @user != nil
-      if password == @user.password
-          redirect_to course_path(uni)
-      else
-        flash[:notice] = "Invalid password. Please try again."
-        redirect_to signin_path
-      end
+    if uni == ""
+      flash[:warning] = "Please enter UNI."
+      redirect_to signin_path
+    elsif password == ""
+      flash[:warning] = "Please enter password."
+      redirect_to signin_path
     else
-      flash[:notice] = "#{uni} hasn't been signup. Please signup first"
-        redirect_to signup_path
+      @user = User.find_by(uni: uni)
+      if @user != nil
+        if password == @user.password
+            redirect_to course_path(uni)
+        else
+          flash[:notice] = "Invalid password. Please try again."
+          redirect_to signin_path
+        end
+      else
+        flash[:notice] = "#{uni} hasn't been signup. Please signup first"
+          redirect_to signup_path
+      end
+
     end
   end
 

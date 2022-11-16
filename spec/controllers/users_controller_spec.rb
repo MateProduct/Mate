@@ -56,7 +56,18 @@ describe UsersController do
         expect(response).to redirect_to(course_path(user.id))
       end
     end
-
+    context 'sign in with empty uni' do
+      it 'should fail to sign in'do
+        post :checkpwd, user: FactoryBot.attributes_for(:user, uni:"")
+        expect(response).to redirect_to(signin_path)
+      end
+    end
+    context 'sign in with empty password' do
+      it 'should fail to sign in'do
+        post :checkpwd, user: FactoryBot.attributes_for(:user, password:"")
+        expect(response).to redirect_to(signin_path)
+      end
+    end
     context 'sign in with a not registered account' do
       it 'sign in unsuccessfully, should render to the signup page'do
         post :checkpwd,user: FactoryBot.attributes_for(:user, uni:"lx2301")

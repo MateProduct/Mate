@@ -21,6 +21,21 @@ Scenario: fill the wrong password (sad path)
   And I press "Sign in"
   Then I should see "Invalid password. Please try again."
 
+Scenario: fill the empty uni (sad path)
+  When I go to the signin page
+    And I fill in "UNI" with ""
+    And I fill in "Password" with "111"
+    And I press "Sign in"
+    Then I should see "Please enter UNI."
+
+
+Scenario: fill the empty password (sad path)
+    When I go to the signin page
+        And I fill in "UNI" with "aa1000"
+        And I fill in "Password" with ""
+        And I press "Sign in"
+        Then I should see "Please enter password."
+
 Scenario: trying to sigin without registered (sad path)
   When I go to the signin page
   And I fill in "UNI" with "lx2301"
