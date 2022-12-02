@@ -84,6 +84,9 @@ class CoursesController < ApplicationController
   end
 
   def times_list
+    if params[:times].nil?
+      return User.all_times
+    end
     params[:times]&.keys || session[:times] || User.all_times
   end
 
@@ -92,6 +95,9 @@ class CoursesController < ApplicationController
   end
 
   def skills_list
+    if params[:skills].nil?
+      return User.all_skills
+    end
     params[:skills]&.keys || session[:skills] || User.all_skills
   end
 
