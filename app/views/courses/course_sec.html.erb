@@ -9,6 +9,17 @@
 <h2><%= @course_no %>_<%=@sec_no %></h2>
 <br>
 <h4> Here are Mates for your class!</h4>
+<%= form_tag course_sec_path(@uni,@course_no, @sec_no), method: :get, id: 'filter_form' do %>
+  Include:
+  <% @all_times.each do |time| %>
+    <div class="form-check  form-check-inline">
+      <%= label_tag "times[#{time}]", time, class: 'form-check-label' %>
+      <%= check_box_tag "times[#{time}]", "1",  @times_to_show.include?(time), class: 'form-check-input' %>
+    </div>
+  <% end %>
+  <%= submit_tag 'Refresh', id: 'times_submit', class: 'btn btn-primary' %>
+<% end %>
+
 <div class="accordion" id="accordionPanelsStayOpenExample">
   <% @classmates.each do |mate|%>
   <div class="accordion-item">

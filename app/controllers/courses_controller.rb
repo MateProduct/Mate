@@ -24,6 +24,10 @@ class CoursesController < ApplicationController
     @course_no = params[:course_no]
     @sec_no = params[:sec_no]
     @uni = params[:uni]
+    @all_times = User.all_times
+    @all_skills = User.all_skills
+    @times_to_show = times_hash
+    session['times'] = times_list
     enrolled= Course.where(course_no:@course_no, section_no:@sec_no).pluck(:uni)
     # print("This is students found in course:",course_no, " sec:", sec_no," :",enrolled)
     @classmates=[]
@@ -33,11 +37,29 @@ class CoursesController < ApplicationController
       # print("student info:", student_info.inspect)
       # info_hash = {'uni'=>student_info['uni'], 'uname'=>student_info['uname'],'lionmail'=>student_info['lionmail'], 'phone'=>student_info['phone'], 'contact'=>student_info['contact'], 'time_slot'=>student_info['time_slot'], 'description'=>student_info['description'], 'skills'=>student_info['skills'] }
       # print("info hash:", info_hash)
-      @classmates.append(student_info)
+      if times_list.nil?
+        @classmates.append(student_info)
+      else
+        for t in times_list
+          if student_info['time_slot'].include?(t)
+            @classmates.append(student_info)
+            break
+          end
+        end
       end
+    end
+
   end
 
   def course_params
     params.require(:course).permit(:course_no, :uni, :section_no)
+  end
+
+  def times_list
+    params[:times]&.keys || session[:times] || User.all_times
+  end
+
+  def times_hash
+    Hash[times_list.collect { |item| [item, "1"] }]
   end
 end
