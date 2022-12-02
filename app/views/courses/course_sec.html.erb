@@ -10,13 +10,22 @@
 <br>
 <h4> Here are Mates for your class!</h4>
 <%= form_tag course_sec_path(@uni,@course_no, @sec_no), method: :get, id: 'filter_form' do %>
-  Include:
+  <h6>Time slots:</h6>
   <% @all_times.each do |time| %>
     <div class="form-check  form-check-inline">
       <%= label_tag "times[#{time}]", time, class: 'form-check-label' %>
       <%= check_box_tag "times[#{time}]", "1",  @times_to_show.include?(time), class: 'form-check-input' %>
     </div>
   <% end %>
+  <br>
+  <h6>Skills:</h6>
+  <% @all_skills.each do |skill| %>
+    <div class="form-check  form-check-inline">
+      <%= label_tag "skills[#{skill}]", skill, class: 'form-check-label' %>
+      <%= check_box_tag "skills[#{skill}]", "1",  @skills_to_show.include?(skill), class: 'form-check-input' %>
+    </div>
+  <% end %>
+  <br>
   <%= submit_tag 'Refresh', id: 'times_submit', class: 'btn btn-primary' %>
 <% end %>
 
