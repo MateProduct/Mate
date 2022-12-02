@@ -19,6 +19,11 @@ $ bundle exec rake db:drop db:create db:migrate
 $ bundle exec rake db:seed                                     
 $ rails server
 ```
+Be sure the bundle version is as below in Gemfile.lock:
+```azure
+BUNDLED WITH
+   1.17.3
+```
 
 
 ## How to test this program
