@@ -35,39 +35,23 @@ class CoursesController < ApplicationController
     @skills_to_show = skills_hash
     enrolled = Course.where(course_no: @course_no, section_no: @sec_no).pluck(:uni)
     # print("This is students found in course:",course_no, " sec:", sec_no," :",enrolled)
+    filtered = Array.new
     @classmates = Set.new
     # classmates = {'uni': uni, 'uname':uname, 'lionmail':lionmail, 'phone':phone, 'contact': contact, 'timeslot': timeslot, 'description':description, 'skills':skills}
-
     for uni in enrolled
       student_info = User.find(uni)
-      # print("student info:", student_info.inspect)
-      # info_hash = {'uni'=>student_info['uni'], 'uname'=>student_info['uname'],'lionmail'=>student_info['lionmail'], 'phone'=>student_info['phone'], 'contact'=>student_info['contact'], 'time_slot'=>student_info['time_slot'], 'description'=>student_info['description'], 'skills'=>student_info['skills'] }
-      # print("info hash:", info_hash)
-      if times_list.nil? && skills_list.nil?
-        p("\n both time_slot and skills are nil")
-        @classmates.add(student_info)
-      elsif times_list.nil? && !skills_list.nil?
-        p("\n time_slot is nil & skills not nil")
-        for s in skills_list
-          if student_info['skills'].include?(s)
-            @classmates.add(student_info)
-            break
-          end
-        end
-      elsif !times_list.nil? && skills_list.nil?
+      if !times_list.nil?
         for t in times_list
           if student_info['time_slot'].include?(t)
-            @classmates.add(student_info)
+            filtered.push(uni)
             break
           end
         end
-      else
-        for t in times_list
-          if student_info['time_slot'].include?(t)
-            @classmates.add(student_info)
-            break
-          end
-        end
+      end
+    end
+    filtered.each do |uni|
+      student_info = User.find(uni)
+      if !skills_list.nil?
         for s in skills_list
           if student_info['skills'].include?(s)
             @classmates.add(student_info)
@@ -76,6 +60,44 @@ class CoursesController < ApplicationController
         end
       end
     end
+    # for uni in enrolled
+    #   student_info = User.find(uni)
+    #   # print("student info:", student_info.inspect)
+    #   # info_hash = {'uni'=>student_info['uni'], 'uname'=>student_info['uname'],'lionmail'=>student_info['lionmail'], 'phone'=>student_info['phone'], 'contact'=>student_info['contact'], 'time_slot'=>student_info['time_slot'], 'description'=>student_info['description'], 'skills'=>student_info['skills'] }
+    #   # print("info hash:", info_hash)
+    #   if times_list.nil? && skills_list.nil?
+    #     p("\n both time_slot and skills are nil")
+    #     @classmates.add(student_info)
+    #   elsif times_list.nil? && !skills_list.nil?
+    #     p("\n time_slot is nil & skills not nil")
+    #     for s in skills_list
+    #       if student_info['skills'].include?(s)
+    #         @classmates.add(student_info)
+    #         break
+    #       end
+    #     end
+    #   elsif !times_list.nil? && skills_list.nil?
+    #     for t in times_list
+    #       if student_info['time_slot'].include?(t)
+    #         @classmates.add(student_info)
+    #         break
+    #       end
+    #     end
+    #   else
+    #     for t in times_list
+    #       if student_info['time_slot'].include?(t)
+    #         @classmates.add(student_info)
+    #         break
+    #       end
+    #     end
+    #     for s in skills_list
+    #       if student_info['skills'].include?(s)
+    #         @classmates.add(student_info)
+    #         break
+    #       end
+    #     end
+    #   end
+    # end
     @classmates=@classmates.to_a
   end
 
