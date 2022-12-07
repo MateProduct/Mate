@@ -5,6 +5,7 @@ FactoryBot.define do
     password {"123456"}
     password_confirmation {"123456"}
     lionmail { "aa1000@columbia.edu" }
-    time_slot { "Monday" }
+    time_slot { "Tues Morning" }
+    skills { "Java" }
   end
 end

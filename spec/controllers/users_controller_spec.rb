@@ -117,4 +117,18 @@ describe UsersController do
     end
   end
 
+  describe 'GET /profile/:uni' do
+    let!(:user) {FactoryBot.create(:user)}
+    it 'should find the user' do
+      get :profile, uni: user.uni
+      expect(assigns(:user)).to eql(user)
+    end
+
+    it 'should render profile page' do
+      get :profile, uni: user.uni
+      expect(response).to render_template('profile')
+    end
+
+  end
+
 end
