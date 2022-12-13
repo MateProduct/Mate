@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_create :confirmation_token
   self.primary_key = :uni
   def self.all_times
     ["Mon Morning", "Mon Afternoon", "Mon Evening", "Tues Morning", "Tues Afternoon", "Tues Evening",
@@ -33,4 +34,10 @@ class User < ActiveRecord::Base
   #   @enforce_password_validation || password.present?
   # end
 
+  private
+  def confirmation_token
+    if self.confirm_token.blank?
+      self.confirm_token = SecureRandom.urlsafe_base64.to_s
+    end
+  end
 end

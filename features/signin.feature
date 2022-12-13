@@ -3,8 +3,8 @@ Feature: Sign in with an account
 
 Background: users in the database
   Given the following users exist:
-    | uni          | uname     | password     | password_confirmation  |
-    | aa1000       | aa1000    | 123456       | 123456                 |
+    | uni          | uname     | password     | password_confirmation  | email_confirmed | confirm_token |
+    | aa1000       | aa1000    | 123456       | 123456                 | true            | nil           |
 
 
 Scenario: fill in sign in form correctly

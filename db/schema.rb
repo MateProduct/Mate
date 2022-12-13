@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221109153404) do
+ActiveRecord::Schema.define(version: 20221213064041) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_no"
@@ -30,11 +30,13 @@ ActiveRecord::Schema.define(version: 20221109153404) do
     t.string   "lionmail"
     t.string   "phone"
     t.string   "contact"
-    t.string   "time_slot",   default: ""
+    t.string   "time_slot",       default: ""
     t.text     "description"
-    t.text     "skills",      default: ""
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "skills",          default: ""
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "email_confirmed", default: false
+    t.string   "confirm_token"
   end
 
   add_index "users", ["uni"], name: "index_users_on_uni"

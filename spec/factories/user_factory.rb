@@ -7,5 +7,7 @@ FactoryBot.define do
     lionmail { "aa1000@columbia.edu" }
     time_slot { "Tues Morning" }
     skills { "Java" }
+    email_confirmed {true}
+    confirm_token {nil}
   end
 end

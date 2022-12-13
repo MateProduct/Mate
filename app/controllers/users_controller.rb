@@ -34,16 +34,37 @@ class UsersController < ApplicationController
       @user = User.find_by(uni: uni)
       if @user != nil
         if password == @user.password
+          if @user.email_confirmed
             redirect_to course_path(uni)
+          else
+            flash[:notice] = "Please activate your account by following the instructions in the account confirmation email you received to proceed."
+            redirect_to signin_path
+          end
         else
           flash[:notice] = "Invalid password. Please try again."
           redirect_to signin_path
         end
       else
         flash[:notice] = "#{uni} hasn't been signup. Please signup first"
-          redirect_to signup_path
+        redirect_to signup_path
       end
 
+    end
+  end
+
+  def confirm_email
+    @user = User.find_by_confirm_token(params[:confirm_token])
+    if @user != nil
+      attributes = {}
+      attributes[:email_confirmed] = true
+      attributes[:confirm_token] = nil
+      @user.update_attributes!(attributes)
+      flash[:notice] = "Welcome to the Mate App! Your email has been confirmed.
+      Please sign in to continue."
+      redirect_to signin_path
+    else
+      flash[:notice] = "Sorry. User does not exist"
+      redirect_to users_path
     end
   end
 
@@ -53,9 +74,10 @@ class UsersController < ApplicationController
     #   flash[:warning] = "Account creation failed. Please check if UNI is already registered."
     #   render :action => 'signup'
     # end
-    @user = User.create(create_user_params) #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
+    @user = User.create(create_user_params.merge(lionmail: create_user_params[:uni]+'@columbia.edu')) #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
     if @user.valid?
-      flash[:notice] = "#{@user.uni} was successfully created."
+      UserMailer.registration_confirmation(@user).deliver_now
+      flash[:notice] = "#{@user.uni} was successfully created. Please confirm your email."
       redirect_to signin_path
     else
       #print("Error in create",@user.error.full_messages) #Ref:https://coursehunters.online/t/pragmaticstudio-ruby-on-rails-6-part-6/4449

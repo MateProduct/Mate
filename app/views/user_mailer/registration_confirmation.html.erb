@@ -1,0 +1,7 @@
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>Thanks for registering! To confirm your registration click the URL below.</p>
+<%= link_to 'Confirm Email', confirm_email_url(@user.confirm_token) %>
+</body>
