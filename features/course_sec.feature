@@ -22,3 +22,19 @@ Background: this user have added current course_sec pair into profile
     Then I should see "UserName1"
     And I should see "UserName2"
     And I should not see "UserName3"
+
+  Scenario: filter all students' info who have enrolled in the same course and same section by time slot
+    Given I am on the course_sec page of course_no "COMSW4152" sec_no "001" with uni "aa1000"
+    Then I should see "Here are Mates for your class!"
+    And I should see "UserName1"
+    Then I uncheck "Mon Morning"
+    Then I press "Refresh"
+    Then I should not see "UserName1"
+
+  Scenario: filter all students' info who have enrolled in the same course and same section by skills
+    Given I am on the course_sec page of course_no "COMSW4152" sec_no "001" with uni "aa1000"
+    Then I should see "Here are Mates for your class!"
+    And I should see "UserName1"
+    Then I uncheck "Ruby"
+    Then I press "Refresh"
+    And I should not see "UserName1"
