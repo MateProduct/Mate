@@ -74,7 +74,7 @@ class UsersController < ApplicationController
     #   flash[:warning] = "Account creation failed. Please check if UNI is already registered."
     #   render :action => 'signup'
     # end
-    @user = User.create(create_user_params.merge(lionmail: create_user_params[:uni]+'@columbia.edu')) #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
+    @user = User.create(create_user_params.merge(lionmail: create_user_params[:uni]+'@columbia.edu'), skills:"", time_slot:"") #Ref: https://stackoverflow.com/questions/23975835/ruby-on-rails-active-record-return-value-when-create-fails
     if @user.valid?
       UserMailer.registration_confirmation(@user).deliver_now
       flash[:notice] = "#{@user.uni} was successfully created. Please confirm your email."
