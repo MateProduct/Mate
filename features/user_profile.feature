@@ -18,3 +18,20 @@ Scenario: change user aa1000 phone number to 123456789
   Then  I should be on the course page for "aa1000"
   Then  I should see "123456789"
 
+  Scenario: change user aa1000 contact to WeChat: aa1000
+    Given I am on the course page for "aa1000"
+    When  I follow "Edit profile"
+    Then  I should be on the edit profile page for "aa1000"
+    When  I fill in "Contact" with "WeChat: aa1000"
+    And   I press "Save Changes"
+    Then  I should be on the course page for "aa1000"
+    Then  I should see "WeChat: aa1000"
+
+  Scenario: change user aa1000 description to master student
+    Given I am on the course page for "aa1000"
+    When  I follow "Edit profile"
+    Then  I should be on the edit profile page for "aa1000"
+    When  I fill in "About Me" with "master student"
+    And   I press "Save Changes"
+    Then  I should be on the course page for "aa1000"
+    Then  I should see "master student"
