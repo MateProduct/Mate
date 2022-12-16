@@ -1,24 +1,44 @@
 <%# Our "base" layout should be a valid HTML document. %>
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mate!</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <%= stylesheet_link_tag 'application', 'media' => 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <%# These classes come from the Bootstrap CSS framework. %>
-    <nav class="navbar navbar-expand-lg bg-primary text-white mb-3">
-      <h1 class="title">Mate!</h1>
-    </nav>
-    <div class="container">
-      <%# Render "flash" messages in our application. This loads _flash.erb %>
-      <%= render 'layouts/flash' %>
-      <main id="main">
-        <%= yield %>
-      </main>
+<head>
+  <title>Mate!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <%= stylesheet_link_tag 'application', 'media' => 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%# These classes come from the Bootstrap CSS framework. %>
+<nav class="navbar navbar-expand-lg mb-3" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#"><h1 class="title">Mate!</h1></a>
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="nav  navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'Profile & Courses', course_path(@uni), :class => 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Add Course', add_course_path(@uni), :class => 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Home</a>
+        </li>
+      </ul>
     </div>
-  </body>
+  </div>
+</nav>
+<div class="container">
+  <%# Render "flash" messages in our application. This loads _flash.erb %>
+  <%= render 'layouts/flash' %>
+  <main id="main">
+    <%= yield %>
+  </main>
+</div>
+</body>
 </html>

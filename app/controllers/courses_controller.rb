@@ -9,13 +9,15 @@ class CoursesController < ApplicationController
   #   @course = Course.find(params[:id])
   # end
   def addcourse
+    @uni = params[:uni]
   end
 
   def add_course
     @course = Course.create(course_params)
+    @uni = params[:uni]
     if @course.valid?
       flash[:notice] = "Course added successfully."
-      redirect_to course_path(params[:uni])
+      redirect_to course_path(@uni)
     else
       flash[:warning] = "Course add failed: " << @course.errors.full_messages.join("; ")
       render :action => 'addcourse'
@@ -60,44 +62,6 @@ class CoursesController < ApplicationController
         end
       end
     end
-    # for uni in enrolled
-    #   student_info = User.find(uni)
-    #   # print("student info:", student_info.inspect)
-    #   # info_hash = {'uni'=>student_info['uni'], 'uname'=>student_info['uname'],'lionmail'=>student_info['lionmail'], 'phone'=>student_info['phone'], 'contact'=>student_info['contact'], 'time_slot'=>student_info['time_slot'], 'description'=>student_info['description'], 'skills'=>student_info['skills'] }
-    #   # print("info hash:", info_hash)
-    #   if times_list.nil? && skills_list.nil?
-    #     p("\n both time_slot and skills are nil")
-    #     @classmates.add(student_info)
-    #   elsif times_list.nil? && !skills_list.nil?
-    #     p("\n time_slot is nil & skills not nil")
-    #     for s in skills_list
-    #       if student_info['skills'].include?(s)
-    #         @classmates.add(student_info)
-    #         break
-    #       end
-    #     end
-    #   elsif !times_list.nil? && skills_list.nil?
-    #     for t in times_list
-    #       if student_info['time_slot'].include?(t)
-    #         @classmates.add(student_info)
-    #         break
-    #       end
-    #     end
-    #   else
-    #     for t in times_list
-    #       if student_info['time_slot'].include?(t)
-    #         @classmates.add(student_info)
-    #         break
-    #       end
-    #     end
-    #     for s in skills_list
-    #       if student_info['skills'].include?(s)
-    #         @classmates.add(student_info)
-    #         break
-    #       end
-    #     end
-    #   end
-    # end
     @classmates=@classmates.to_a
   end
 

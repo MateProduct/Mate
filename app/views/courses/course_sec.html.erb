@@ -6,63 +6,70 @@
   <title>Bootstrap Example</title>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
+<div class="container text-center">
 <h2><%= @course_no %>_<%= @sec_no %></h2>
 <br>
 <h4> Here are Mates for your class!</h4>
-<div class="vstack gap-4 col-md-12 mx-auto">
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Filters
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <%= form_tag course_sec_path(@uni, @course_no, @sec_no), method: :get, id: 'filter_form' do %>
-            <h6>Time slots:</h6>
-            <div class="container px-4 text-center">
-              <div class="row row-cols-2 row-cols-sm-6 g-2 g-lg-1 gx-5">
-                <% @all_times.each do |time| %>
-                  <div class="form-check-sm  form-check-inline">
-                    <div class="col">
-                      <div class="p-6">
-                        <%= check_box_tag "times[#{time}]", "1", @times_to_show.include?(time), class: 'btn-check btn-sm' %>
-                        <%= label_tag "times[#{time}]", time, class: 'btn btn-outline-primary btn-sm btn-block' %>
-                      </div>
+  <div class="container-fluid">
+    <div class="d-grid">
+<!--    <a class="navbar-brand" href="#">Filters</a>-->
+    <button class=" btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <span class="">Filters</span>
+    </button>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvasExampleLabel">Filters</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+
+                <%= form_tag course_sec_path(@uni, @course_no, @sec_no), method: :get, id: 'filter_form' do %>
+                  <h6>Time slots:</h6>
+                  <div class="container px-1 text-center">
+                    <div class="row-cols-2 row-cols-sm-4 g-2 g-lg-1 gx-5">
+                      <% @all_times.each do |time| %>
+                        <div class="form-check-sm  form-check-inline">
+                          <div class="col-16">
+                            <div class="p-1">
+                              <%= check_box_tag "times[#{time}]", "1", @times_to_show.include?(time), class: 'btn-check btn-sm' %>
+                              <%= label_tag "times[#{time}]", time, class: 'btn btn-outline-primary btn-sm btn-block' %>
+                            </div>
+                          </div>
+                        </div>
+                      <% end %>
                     </div>
                   </div>
-                <% end %>
-              </div>
-            </div>
-            <br>
-            <h6>Skills:</h6>
-            <div class="container px-4 text-center">
-              <div class="row row-cols-2 row-cols-sm-6 g-2 g-lg-1 gx-5">
-            <% @all_skills.each_with_index do |skill, i| %>
+                  <br>
+                  <h6>Skills:</h6>
+                  <div class="container px-1 text-center">
+                    <div class="row row-cols-1 row-cols-sm-1 g-lg-1 gx-5">
+                      <% @all_skills.each_with_index do |skill, i| %>
 
-              <div class="form-check  form-check-inline">
-                <div class="col">
-                  <div class="p-6">
+                        <div class="form-check  form-check-inline">
+                          <div class="col">
+                            <div class="p-6">
 
-                    <%= check_box_tag "skills[#{skill}]", "1", @skills_to_show.include?(skill), class: 'btn-check btn-sm btn-block' %>
-                    <%= label_tag "skills[#{skill}]", skill, class: 'btn btn-outline-primary btn-sm btn-block' %>
+                              <%= check_box_tag "skills[#{skill}]", "1", @skills_to_show.include?(skill), class: 'btn-check btn-sm btn-block' %>
+                              <%= label_tag "skills[#{skill}]", skill, class: 'btn btn-outline-primary btn-sm btn-block' %>
+                            </div>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
                   </div>
-                </div>
-              </div>
-            <% end %>
-              </div>
-            </div>
-            <br>
-            <%= submit_tag 'Refresh', id: 'times_submit', class: 'btn btn-primary' %>
-          <% end %>
-        </div>
+                  <br>
+                  <%= submit_tag 'Refresh', id: 'times_submit', class: 'btn btn-outline-success' %>
+                <% end %>
       </div>
     </div>
   </div>
+<br>
+<div class="vstack gap-4 col-md-12 mx-auto">
 
 
-  <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion" id="mates">
     <% @classmates.each do |mate| %>
       <div class="accordion-item">
         <h2 class="accordion-header" id="<%= 'panelsStayOpen-heading' << mate['uni'].to_s %>">
@@ -96,6 +103,8 @@
     <% end %>
   </div>
 </div>
+</div>
+
 <br>
 <%= link_to 'Profile & Courses', course_path(@uni), :class => 'btn btn-primary' %>
 <%= link_to 'Add Course', add_course_path(@uni), :class => 'btn btn-primary' %>
