@@ -19,3 +19,4 @@ log
 heroku_ssh_rsa
 heroku_ssh_rsa.pub
 /coverage
+/config/environment.rb
