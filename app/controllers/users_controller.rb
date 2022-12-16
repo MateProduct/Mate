@@ -89,13 +89,16 @@ class UsersController < ApplicationController
 
   def edit
     # @user = User.find params[:uni]
+    @uni = params[:uni]
   end
   def profile
     @all_times = User.all_times
     @all_skills = User.all_skills
     @user = User.find params[:uni]
+    @uni = params[:uni]
   end
   def update
+    @uni = params[:uni]
     @user = User.find params[:uni]
     @user.update_attributes!(update_params)
     flash[:notice] = "#{@user.uni} was successfully updated."
