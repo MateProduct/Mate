@@ -6,61 +6,95 @@
   <title>Bootstrap Example</title>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<h2><%= @course_no %>_<%=@sec_no %></h2>
+<h2><%= @course_no %>_<%= @sec_no %></h2>
 <br>
 <h4> Here are Mates for your class!</h4>
-<%= form_tag course_sec_path(@uni,@course_no, @sec_no), method: :get, id: 'filter_form' do %>
-  <h6>Time slots:</h6>
-  <% @all_times.each do |time| %>
-    <div class="form-check  form-check-inline">
-      <%= label_tag "times[#{time}]", time, class: 'form-check-label' %>
-      <%= check_box_tag "times[#{time}]", "1",  @times_to_show.include?(time), class: 'form-check-input' %>
-    </div>
-  <% end %>
-  <br>
-  <h6>Skills:</h6>
-  <% @all_skills.each do |skill| %>
-    <div class="form-check  form-check-inline">
-      <%= label_tag "skills[#{skill}]", skill, class: 'form-check-label' %>
-      <%= check_box_tag "skills[#{skill}]", "1",  @skills_to_show.include?(skill), class: 'form-check-input' %>
-    </div>
-  <% end %>
-  <br>
-  <%= submit_tag 'Refresh', id: 'times_submit', class: 'btn btn-primary' %>
-<% end %>
+<div class="vstack gap-4 col-md-12 mx-auto">
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Filters
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <%= form_tag course_sec_path(@uni, @course_no, @sec_no), method: :get, id: 'filter_form' do %>
+            <h6>Time slots:</h6>
+            <div class="container px-4 text-center">
+              <div class="row row-cols-2 row-cols-sm-6 g-2 g-lg-1 gx-5">
+                <% @all_times.each do |time| %>
+                  <div class="form-check-sm  form-check-inline">
+                    <div class="col">
+                      <div class="p-6">
+                        <%= check_box_tag "times[#{time}]", "1", @times_to_show.include?(time), class: 'btn-check btn-sm' %>
+                        <%= label_tag "times[#{time}]", time, class: 'btn btn-outline-primary btn-sm btn-block' %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <br>
+            <h6>Skills:</h6>
+            <div class="container px-4 text-center">
+              <div class="row row-cols-2 row-cols-sm-6 g-2 g-lg-1 gx-5">
+            <% @all_skills.each_with_index do |skill, i| %>
 
-<div class="accordion" id="accordionPanelsStayOpenExample">
-  <% @classmates.each do |mate|%>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="<%='panelsStayOpen-heading'<<mate['uni'].to_s %>">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="<%='#panelsStayOpen-collapse'<<mate['uni'].to_s %>" aria-expanded="true" aria-controls="<%='panelsStayOpen-collapse'<<mate['uni'].to_s %>">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item"><%= mate['uname'] %></li>
-          <li class="list-group-item"><%= mate['time_slot'] %></li>
-          <li class="list-group-item"><%= mate['skills'] %></li>
-        </ul>
-      </button>
-    </h2>
-<!--    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">-->
+              <div class="form-check  form-check-inline">
+                <div class="col">
+                  <div class="p-6">
 
-    <div id="<%='panelsStayOpen-collapse'<<mate['uni'].to_s %>" class="accordion-collapse collapse" aria-labelledby="<%='panelsStayOpen-heading'<<mate['uni'].to_s %>">
-      <div class="accordion-body">
-        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
-          <h6 id="scrollspyHeading1">UNI: <%= mate['uni'] %> </h6>
-          <p></p>
-          <h6 id="scrollspyHeading2">Lionmail: <%= mate['lionmail'] %> </h6>
-          <p> </p>
-          <h6 id="scrollspyHeading3">Phone_no: <%= mate['phone'] %></h6>
-          <p></p>
-          <h6 id="scrollspyHeading4">Contact: </h6>
-          <p><%= mate['contact'] %></p>
-          <h6 id="scrollspyHeading5">About me:</h6>
-          <p><%= mate['description'] %></p>
+                    <%= check_box_tag "skills[#{skill}]", "1", @skills_to_show.include?(skill), class: 'btn-check btn-sm btn-block' %>
+                    <%= label_tag "skills[#{skill}]", skill, class: 'btn btn-outline-primary btn-sm btn-block' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+              </div>
+            </div>
+            <br>
+            <%= submit_tag 'Refresh', id: 'times_submit', class: 'btn btn-primary' %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
-  <% end %>
+
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <% @classmates.each do |mate| %>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="<%= 'panelsStayOpen-heading' << mate['uni'].to_s %>">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="<%= '#panelsStayOpen-collapse' << mate['uni'].to_s %>" aria-expanded="true" aria-controls="<%= 'panelsStayOpen-collapse' << mate['uni'].to_s %>">
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item"><%= mate['uname'] %></li>
+              <li class="list-group-item"><%= mate['time_slot'] %></li>
+              <li class="list-group-item"><%= mate['skills'] %></li>
+            </ul>
+          </button>
+        </h2>
+        <!--    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">-->
+
+        <div id="<%= 'panelsStayOpen-collapse' << mate['uni'].to_s %>" class="accordion-collapse collapse" aria-labelledby="<%= 'panelsStayOpen-heading' << mate['uni'].to_s %>">
+          <div class="accordion-body">
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
+              <h6 id="scrollspyHeading1">UNI: <%= mate['uni'] %> </h6>
+              <p></p>
+              <h6 id="scrollspyHeading2">Lionmail: <%= mate['lionmail'] %> </h6>
+              <p></p>
+              <h6 id="scrollspyHeading3">Phone_no: <%= mate['phone'] %></h6>
+              <p></p>
+              <h6 id="scrollspyHeading4">Contact: </h6>
+              <p><%= mate['contact'] %></p>
+              <h6 id="scrollspyHeading5">About me:</h6>
+              <p><%= mate['description'] %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 <br>
 <%= link_to 'Profile & Courses', course_path(@uni), :class => 'btn btn-primary' %>
