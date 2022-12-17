@@ -1,3 +1,11 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <title>Bootstrap Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 <h2>Edit Profile</h2>
 
 <%= form_tag profile_path(params[:uni]),  :method => :put do %>
@@ -13,10 +21,26 @@
   <br/>
   <% @all_times.each do |time| %>
     <div class="form-check  form-check-inline">
-      <%= label_tag "user[time_slot][]", time, class: 'form-check-label' %>
-      <%= check_box_tag "user[time_slot][]", time, (@user.time_slot.include?(time)), class: 'form-check-input' %>
+      <%= check_box_tag "times[#{time}]", "1", (@user.time_slot.include?(time)), class: 'form-check-input' %>
+      <%= label_tag "times[#{time}]", time, class: 'form-check-label' %>
     </div>
   <% end %>
+
+<!--  <div class="container px-1 ">-->
+<!--    <div class="row-cols-2 row-cols-sm-4 g-2 g-lg-1 gx-5">-->
+      <%# @all_times.each do |time| %>
+<!--        <div class="form-check-sm  form-check-inline">-->
+<!--          <div class="col-16">-->
+<!--            <div class="p-1">-->
+              <%#= check_box_tag"user[time_slot][]", time, @user.time_slot.include?(time), class: 'btn-check btn-sm' %>
+              <%#= label_tag "user[time_slot][]", time, class: 'btn btn-outline-primary btn-sm btn-block' %>
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      <%# end %>
+<!--    </div>-->
+<!--  </div>-->
+
   <br/>
   <%= label :user, :description, 'About Me', :class => 'col-form-label' %>
   <%= text_field :user, :description, :class => 'form-control', placeholder: @user.description %>
@@ -24,11 +48,12 @@
   <br/>
   <% @all_skills.each do |skill| %>
     <div class="form-check  form-check-inline">
-      <%= label_tag "user[skills][]", skill, class: 'form-check-label' %>
-      <%= check_box_tag "user[skills][]", skill, (@user.skills.include?(skill)), class: 'form-check-input' %>
+      <%= check_box_tag "skills[#{skill}]", "1", @skills_to_show.include?(skill), class: 'form-check-input' %>
+      <%= label_tag "skills[#{skill}]", skill, class: 'form-check-label' %>
     </div>
   <% end %>
   <br/>
+  <br>
   <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
   <%= link_to 'Courses', course_path(params[:uni]), :class => 'btn btn-secondary' %>
 <% end %>
