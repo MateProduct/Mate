@@ -21,8 +21,8 @@
   <br/>
   <% @all_times.each do |time| %>
     <div class="form-check  form-check-inline">
-      <%= check_box_tag "user[time_slot][]", time, (@user.time_slot.include?(time)), class: 'form-check-input' %>
-      <%= label_tag "user[time_slot][]", time, class: 'form-check-label' %>
+      <%= check_box_tag "times[#{time}]", "1", (@user.time_slot.include?(time)), class: 'form-check-input' %>
+      <%= label_tag "times[#{time}]", time, class: 'form-check-label' %>
     </div>
   <% end %>
 
@@ -48,8 +48,8 @@
   <br/>
   <% @all_skills.each do |skill| %>
     <div class="form-check  form-check-inline">
-      <%= label_tag "user[skills][]", skill, class: 'form-check-label' %>
-      <%= check_box_tag "user[skills][]", skill, (@user.skills.include?(skill)), class: 'form-check-input' %>
+      <%= check_box_tag "skills[#{skill}]", "1", @skills_to_show.include?(skill), class: 'form-check-input' %>
+      <%= label_tag "skills[#{skill}]", skill, class: 'form-check-label' %>
     </div>
   <% end %>
   <br/>

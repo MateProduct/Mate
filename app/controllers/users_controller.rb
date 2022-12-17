@@ -96,11 +96,13 @@ class UsersController < ApplicationController
     @all_skills = User.all_skills
     @user = User.find params[:uni]
     @uni = params[:uni]
+    @times_to_show = @user.time_slot || times_hash
+    @skills_to_show = @user.skills || skills_hash
   end
   def update
     @uni = params[:uni]
     @user = User.find params[:uni]
-    @user.update_attributes!(update_params)
+    @user.update_attributes!(update_params.merge(time_slot: times_list, skills: skills_list))
     flash[:notice] = "#{@user.uni} was successfully updated."
     redirect_to course_path(@user)
   end
@@ -132,11 +134,39 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit(:uni, :uname, :lionmail, :phone, :contact, {time_slot:[]}, :description, {skills:[]})
+    params.require(:user).permit(:uni, :uname, :lionmail, :phone, :contact, :description)
   end
 
   def create_user_params
     params.require(:user).permit(:uni, :password, :password_confirmation,:uname)
+  end
+
+  def times_list
+    if params[:times].nil?
+      return ""
+    end
+    params[:times]&.keys
+  end
+
+  def times_hash
+    if times_list.empty?
+      return ""
+    end
+    Hash[times_list.collect { |item| [item, "1"] }]
+  end
+
+  def skills_list
+    if params[:skills].nil?
+      return ""
+    end
+    params[:skills]&.keys
+  end
+
+  def skills_hash
+    if skills_list.empty?
+      return ""
+    end
+    Hash[skills_list.collect { |item| [item, "1"] }]
   end
 
 end
