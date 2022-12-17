@@ -19,41 +19,57 @@
   <%= text_field :user, :contact, :class => 'form-control', placeholder: @user.contact%>
   <%= label :user, :time_slot, 'Available time slot: ', :class => 'col-form-label'  %>
   <br/>
-  <% @all_times.each do |time| %>
-    <div class="form-check  form-check-inline">
-      <%= check_box_tag "times[#{time}]", "1", (@user.time_slot.include?(time)), class: 'form-check-input' %>
-      <%= label_tag "times[#{time}]", time, class: 'form-check-label' %>
-    </div>
-  <% end %>
-
-<!--  <div class="container px-1 ">-->
-<!--    <div class="row-cols-2 row-cols-sm-4 g-2 g-lg-1 gx-5">-->
-      <%# @all_times.each do |time| %>
-<!--        <div class="form-check-sm  form-check-inline">-->
-<!--          <div class="col-16">-->
-<!--            <div class="p-1">-->
-              <%#= check_box_tag"user[time_slot][]", time, @user.time_slot.include?(time), class: 'btn-check btn-sm' %>
-              <%#= label_tag "user[time_slot][]", time, class: 'btn btn-outline-primary btn-sm btn-block' %>
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-      <%# end %>
+  <%# @all_times.each do |time| %>
+<!--    <div class="form-check  form-check-inline">-->
+      <%#= check_box_tag "times[#{time}]", "1", (@user.time_slot.include?(time)), class: 'form-check-input' %>
+      <%#= label_tag "times[#{time}]", time, class: 'form-check-label' %>
 <!--    </div>-->
-<!--  </div>-->
+  <%# end %>
+
+  <div class="container px-1 ">
+    <div class="row-cols-2 row-cols-sm-4 g-2 g-lg-1 gx-5">
+      <% @all_times.each do |time| %>
+        <div class="form-check-sm  form-check-inline">
+          <div class="col-16">
+            <div class="p-1">
+              <%= check_box_tag "times[#{time}]", "1", @user.time_slot.include?(time), class: 'btn-check btn-sm' %>
+              <%= label_tag "times[#{time}]", time, class: 'btn btn-outline-primary btn-sm btn-block' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
   <br/>
   <%= label :user, :description, 'About Me', :class => 'col-form-label' %>
   <%= text_field :user, :description, :class => 'form-control', placeholder: @user.description %>
   <%= label :user, :skills, 'Skills', :class => 'col-form-label' %>
   <br/>
-  <% @all_skills.each do |skill| %>
-    <div class="form-check  form-check-inline">
-      <%= check_box_tag "skills[#{skill}]", "1", @skills_to_show.include?(skill), class: 'form-check-input' %>
-      <%= label_tag "skills[#{skill}]", skill, class: 'form-check-label' %>
+
+  <div class="container px-1 ">
+    <div class="row row-cols-1 row-cols-sm-6 g-lg-1 gx-5">
+      <% @all_skills.each_with_index do |skill, i| %>
+
+        <div class="form-check  form-check-inline">
+          <div class="col">
+            <div class="p-6">
+
+              <%= check_box_tag "skills[#{skill}]", "1", @skills_to_show.include?(skill), class: 'btn-check btn-sm btn-block' %>
+              <%= label_tag "skills[#{skill}]", skill, class: 'btn btn-outline-primary btn-sm btn-block' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+
+
   <br/>
   <br>
   <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
   <%= link_to 'Courses', course_path(params[:uni]), :class => 'btn btn-secondary' %>
+  <br>
+  <br>
+  <br>
 <% end %>
