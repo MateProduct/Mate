@@ -6,7 +6,7 @@ Rottenpotatoes::Application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
-  :password => 'PUT IN PASSWORD', # This is the secret sendgrid API key which was issued during API key creation
+  :password => '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', # This is the secret sendgrid API key which was issued during API key creation
   :domain => 'w4152-mate.herokuapp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
