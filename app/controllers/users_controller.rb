@@ -63,7 +63,7 @@ class UsersController < ApplicationController
       Please sign in to continue."
       redirect_to signin_path
     else
-      flash[:notice] = "Sorry. User does not exist"
+      flash[:notice] = "Sorry. The token has been used or does not exist. Please log in using your account info."
       redirect_to users_path
     end
   end
