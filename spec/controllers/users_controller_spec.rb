@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe UsersController do
 
-  describe 'PUT #update' do
+  describe 'PUT /profile/:uni #update' do
     let!(:user1) {FactoryBot.create(:user)}
     before(:each) do
-      put :update, uni: user1.uni, user: FactoryBot.attributes_for(:user, time_slot: ["Tues Morning"])
+      put :update, uni: user1.uni, user: FactoryBot.attributes_for(:user), times: { "Tues Morning": 1}
     end
 
     it 'updates an existing user' do
