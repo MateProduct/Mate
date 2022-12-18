@@ -1,8 +1,26 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <title>Bootstrap Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
 <h2>Sign up an account</h2>
 
 <%= form_tag users_path, :class => 'form' do %>
-  <%= label :user, :uni, 'UNI', :class => 'col-form-label' %>
-  <%= text_field :user, :uni, :class => 'form-control  col-2' %>
+
+  <%= label :user, :uni, 'Lion Mail  ', :class => 'col-form-label' %>
+  <div class="input-group mb-3">
+    <%= text_field :user, :uni, :class => 'form-control  col-2' %>
+    <span class="input-group-text" id="basic-addon2">@columbia.edu</span>
+  </div>
+
+  <div class="alert alert-primary" role="alert">
+    A verification email will be sent to your email address. Please click the link in the email to verify your account after signing up.
+  </div>
 
   <%= label :user, :password, 'Password', :class => 'col-form-label'  %>
   <%= password_field :user, :password, :class => 'form-control col-2' %>
