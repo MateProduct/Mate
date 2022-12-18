@@ -59,9 +59,11 @@
           </li>
         <% end %>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <%= link_to 'Sign Out', users_path, :class => 'btn btn-outline-secondary my-2 my-sm-0' %>
-      </form>
+      <% if !@uni.nil? %>
+        <form class="form-inline my-2 my-lg-0">
+          <%= link_to 'Sign Out', users_path, :class => 'btn btn-outline-secondary my-2 my-sm-0' %>
+        </form>
+      <%end %>
     </div>
   </div>
 </nav>
