@@ -4,16 +4,21 @@ describe UsersController do
 
   describe 'PUT /profile/:uni #update' do
     let!(:user1) {FactoryBot.create(:user)}
-    before(:each) do
-      put :update, uni: user1.uni, user: FactoryBot.attributes_for(:user), times: { "Tues Morning": 1}
+
+    it 'updates an existing user on time_slot' do
+      put :update, uni: user1.uni, user: FactoryBot.attributes_for(:user), times: { "Mon Morning": 1}
+      user1.reload
+      expect(user1.time_slot).to eql("[\"Mon Morning\"]")
     end
 
-    it 'updates an existing user' do
+    it 'updates an existing user on skills' do
+      put :update, uni: user1.uni, user: FactoryBot.attributes_for(:user), skills: { "Ruby": 1}
       user1.reload
-      expect(user1.time_slot).to eql("[\"Tues Morning\"]")
+      expect(user1.skills).to eql("[\"Ruby\"]")
     end
 
     it 'redirects to the course page' do
+      put :update, uni: user1.uni, user: FactoryBot.attributes_for(:user), times: { "Mon Morning": 1}
       expect(response).to redirect_to(course_path(user1))
     end
   end

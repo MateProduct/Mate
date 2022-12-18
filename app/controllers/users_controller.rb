@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @uni = session[:uni]
+    #@uni = session[:uni]
   end
 
   def new
@@ -60,8 +60,7 @@ class UsersController < ApplicationController
       attributes[:email_confirmed] = true
       attributes[:confirm_token] = nil
       @user.update_attributes!(attributes)
-      flash[:notice] = "Welcome to the Mate App! Your email has been confirmed.
-      Please sign in to continue."
+      flash[:notice] = "Welcome to the Mate App! Your email has been confirmed. Please sign in to continue."
       redirect_to signin_path
     else
       flash[:notice] = "Sorry. The token has been used or does not exist. Please log in using your account info."
@@ -90,15 +89,15 @@ class UsersController < ApplicationController
 
   def edit
     # @user = User.find params[:uni]
-    @uni = params[:uni]
+    #@uni = params[:uni]
   end
   def profile
     @all_times = User.all_times
     @all_skills = User.all_skills
     @user = User.find params[:uni]
     @uni = params[:uni]
-    @times_to_show = @user.time_slot || times_hash
-    @skills_to_show = @user.skills || skills_hash
+    @times_to_show = @user.time_slot
+    @skills_to_show = @user.skills
   end
   def update
     @uni = params[:uni]
@@ -149,12 +148,12 @@ class UsersController < ApplicationController
     params[:times]&.keys
   end
 
-  def times_hash
-    if times_list.empty?
-      return ""
-    end
-    Hash[times_list.collect { |item| [item, "1"] }]
-  end
+  # def times_hash
+  #   if times_list.empty?
+  #     return ""
+  #   end
+  #   Hash[times_list.collect { |item| [item, "1"] }]
+  # end
 
   def skills_list
     if params[:skills].nil?
@@ -163,11 +162,11 @@ class UsersController < ApplicationController
     params[:skills]&.keys
   end
 
-  def skills_hash
-    if skills_list.empty?
-      return ""
-    end
-    Hash[skills_list.collect { |item| [item, "1"] }]
-  end
+  # def skills_hash
+  #   if skills_list.empty?
+  #     return ""
+  #   end
+  #   Hash[skills_list.collect { |item| [item, "1"] }]
+  # end
 
 end
