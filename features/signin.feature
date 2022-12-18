@@ -9,21 +9,21 @@ Background: users in the database
 
 Scenario: fill in sign in form correctly
   When I go to the signin page
-  And I fill in "UNI" with "aa1000"
+  And I fill in "Lion Mail" with "aa1000"
   And I fill in "Password" with "123456"
   And I press "Sign in"
   Then I should be on the course page for "aa1000"
 
 Scenario: fill the wrong password (sad path)
   When I go to the signin page
-  And I fill in "UNI" with "aa1000"
+  And I fill in "Lion Mail" with "aa1000"
   And I fill in "Password" with "111111"
   And I press "Sign in"
   Then I should see "Invalid password. Please try again."
 
 Scenario: fill the empty uni (sad path)
   When I go to the signin page
-    And I fill in "UNI" with ""
+    And I fill in "Lion Mail" with ""
     And I fill in "Password" with "111"
     And I press "Sign in"
     Then I should see "Please enter UNI."
@@ -31,14 +31,14 @@ Scenario: fill the empty uni (sad path)
 
 Scenario: fill the empty password (sad path)
     When I go to the signin page
-        And I fill in "UNI" with "aa1000"
+        And I fill in "Lion Mail" with "aa1000"
         And I fill in "Password" with ""
         And I press "Sign in"
         Then I should see "Please enter password."
 
 Scenario: trying to sigin without registered (sad path)
   When I go to the signin page
-  And I fill in "UNI" with "lx2301"
+  And I fill in "Lion Mail" with "lx2301"
   And I fill in "Password" with "111111"
   And I press "Sign in"
   Then I should see "lx2301 hasn't been signup. Please signup first"

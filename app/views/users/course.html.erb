@@ -7,6 +7,7 @@
 <!--      <li class="list-group-item active text-black"style="background-color: #e3f2fd; " aria-current="true"><h4>Details about <em><%#= @user.uname%></em></h4></li>-->
       <li class="list-group-item">    UNI: <%= @user.uni %></li>
       <li class="list-group-item">    Lionmail: <%= @user.lionmail %></li>
+      <li class="list-group-item">    Username: <%= @user.uname %></li>
       <li class="list-group-item">    Phone Number: <%= @user.phone %></li>
       <li class="list-group-item">    Contact: <%= @user.contact %></li>
       <li class="list-group-item">    Available Time: <%= @user.time_slot %></li>
@@ -22,7 +23,7 @@
     </ul>
 
     <br>
-    <%= link_to 'Edit profile', profile_path(params[:uni]), :class => 'btn btn-outline-primary' %>
+    <%= link_to 'Edit User Profile', profile_path(params[:uni]), :class => 'btn btn-outline-primary' %>
   </div>
   <div class="col-2"> </div>
   <div class="col-4">
@@ -42,7 +43,7 @@
 
       </div>
     <br>
-      <%= link_to 'Add Course', add_course_path(params[:uni]), :class => 'btn btn-outline-primary' %>
+      <%= link_to 'Add New Course', add_course_path(params[:uni]), :class => 'btn btn-outline-primary' %>
     </div>
   </div>
 

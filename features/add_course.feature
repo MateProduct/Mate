@@ -13,7 +13,7 @@ Feature: Add Course
 
     Scenario: Add a new course
       Given I am on the course page for "aa1000"
-      When I follow "Add Course"
+      When I follow "Add New Course"
       Then I should see "Add a new course"
       When I fill in "Course Code: e.g. COMSW4152" with "COMSW4995"
       And I fill in "Section Number: e.g. 001,002,003" with "007"
@@ -23,7 +23,7 @@ Feature: Add Course
 
       Scenario: Add a course that already exists
         Given I am on the course page for "aa1000"
-        When I follow "Add Course"
+        When I follow "Add New Course"
         Then I should see "Add a new course"
         When I fill in "Course Code: e.g. COMSW4152" with "COMSW4152"
         And I fill in "Section Number: e.g. 001,002,003" with "001"

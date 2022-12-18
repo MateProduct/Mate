@@ -10,7 +10,7 @@ Background: users in the database
 
 Scenario: fill in sign up form correctly
   When I go to the signup page
-  And I fill in "UNI" with "jc5897"
+  And I fill in "Lion Mail" with "jc5897"
   And I fill in "Password" with "123456"
   And I fill in "Confirm Password" with "123456"
   And I fill in "User Name" with "Jiawen Chu"
@@ -20,7 +20,7 @@ Scenario: fill in sign up form correctly
 
 Scenario: fill different string in password and password_confirmation (sad path)
   When I go to the signup page
-  And I fill in "UNI" with "jc5897"
+  And I fill in "Lion Mail" with "jc5897"
   And I fill in "Password" with "123456"
   And I fill in "Confirm Password" with "123"
   And I fill in "User Name" with "Jiawen Chu"
@@ -29,7 +29,7 @@ Scenario: fill different string in password and password_confirmation (sad path)
 
 Scenario: Registered user try to sign up again (sad path)
   When I go to the signup page
-  And I fill in "UNI" with "aa1000"
+  And I fill in "Lion Mail" with "aa1000"
   And I press "Sign up"
   Then I should see "Uni has already been taken"
 
