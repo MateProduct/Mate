@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.nav-bar-link {
+    color: white;
+}
+
+.nav-bar-link:hover {
+    color: dodgerblue;
+}
+
+/*.course-sec {*/
+/*    background-image: url('cu.png');*/
+/*}*/
+.btn-outline-primary:hover {
+    color: dodgerblue;
+    background-color: #e3f2fd;
+}

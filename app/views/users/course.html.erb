@@ -1,14 +1,6 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-  <title>Bootstrap Example</title>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
 
-<div class="hstack gap-3 px-auto">
-  <div>
+<div class="row">
+  <div class="col-6">
     <h2>Profile: </h2>
     <!--<h2>Details about <em><%#= @user.uname%></em></h2>-->
     <ul class="list-group" >
@@ -30,9 +22,10 @@
     </ul>
 
     <br>
-    <%= link_to 'Edit profile', profile_path(params[:uni]), :class => 'btn btn-primary' %>
+    <%= link_to 'Edit profile', profile_path(params[:uni]), :class => 'btn btn-outline-primary' %>
   </div>
-  <div class="mb-auto ms-auto ">
+  <div class="col-2"> </div>
+  <div class="col-4">
     <div>
       <h2>My Courses:</h2>
       <br>
@@ -49,14 +42,14 @@
 
       </div>
     <br>
-      <%= link_to 'Add Course', add_course_path(params[:uni]), :class => 'btn btn-primary' %>
+      <%= link_to 'Add Course', add_course_path(params[:uni]), :class => 'btn btn-outline-primary' %>
     </div>
   </div>
 
 </div>
 <br>
 <br>
-<%= link_to 'Sign out', users_path, :class => 'btn btn-secondary' %>
+
 
 <!--<br>-->
 <%#= form_tag  course_path, :class => 'form' do %>
