@@ -1,36 +1,14 @@
+
 <!--  This file is app/views/users/index.html.erb -->
-<h2>Hello Mate!</h2>
-<p> Welcome to the Mate website </p>
-<%#  Part 2: Start here... %>
+<br>
+<div class="container text-center">
+  <h2>Hello Mate!</h2>
+  <p> Welcome to the Mate website </p>
 
-<!--<table class="table table-striped col-md-12" id="users">-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th>Movie Title</th>-->
-<!--      <th>Rating</th>-->
-<!--      <th>Release Date</th>-->
-<!--      <th>More Info</th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-    <%# @users.each do |movie| %>
-<!--      <tr>-->
-<!--        <td>-->
-          <%#= movie.title %>
-<!--        </td>-->
-<!--        <td> -->
-          <%#= movie.rating %>
-<!--        </td>-->
-<!--        <td>-->
-          <%#= movie.release_date %>
-<!--        </td>-->
-<!--        <td>-->
-          <%#= link_to "More about #{movie.title}", movie_path(movie) %>
-<!--        </td>-->
-<!--      </tr>-->
-    <%# end %>
-<!--  </tbody>-->
-<!--</table>-->
+  <% if @uni.nil? %>
+    <p> Please log in to find mates of your classes!</p>
+    <%= link_to 'Sign Up', signup_path, :class => 'btn btn-outline-primary' %>
+    <%= link_to 'Sign In', signin_path, :class => 'btn btn-outline-primary' %>
+  <% end %>
 
-<%= link_to 'Sign Up', signup_path, :class => 'btn btn-primary' %>
-<%= link_to 'Sign In', signin_path, :class => 'btn btn-primary' %>
+</div>

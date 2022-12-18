@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def index
-
+    @uni = session[:uni]
   end
 
   def new
@@ -35,6 +35,7 @@ class UsersController < ApplicationController
       if @user != nil
         if password == @user.password
           if @user.email_confirmed
+            session[:uni]= uni
             redirect_to course_path(uni)
           else
             flash[:notice] = "Please activate your account by following the instructions in the account confirmation email you received to proceed."
