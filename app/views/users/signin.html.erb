@@ -1,8 +1,13 @@
 <h2>Sign in to an account</h2>
 
 <%= form_tag  signin_path, :class => 'form' do %>
-  <%= label :user, :uni, 'UNI', :class => 'col-form-label' %>
-  <%= text_field :user, :uni, :class => 'form-control  col-2' %>
+
+  <%= label :user, :uni, 'Lion Mail  ', :class => 'col-form-label' %>
+  <div class="input-group mb-3">
+    <%= text_field :user, :uni, :class => 'form-control  col-2' %>
+    <span class="input-group-text" id="basic-addon2">@columbia.edu</span>
+  </div>
+
   <%= label :user, :password, 'Password', :class => 'col-form-label'  %>
   <%= password_field :user, :password, :class => 'form-control col-2' %>
   <br/>
