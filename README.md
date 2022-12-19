@@ -8,21 +8,11 @@
 ## How to run this program
 - Heroku Link: https://w4152-mate.herokuapp.com/
 - Download from git and run on ruby
-  - Go to config folder
-    - In the environment.rb file, change the password to the API key in the readme.txt
-  - Go to config/environments folder
-    - for each file in the folder, change
-    ```
-    config.action_mailer.default_url_options = { :host => 'https://w4152-mate.herokuapp.com' }
-    ```
-    (line 20 in development.rb, line 13 in production.rb, line 16 in test.rb) into
-    ```
-    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-    ```
+  - In the config/environment.rb file, change the password to the API key in the README.txt file which submitted on canvas
   - Run the following command in terminal
     ```
     $ bundle install
-    $ bundle rake db:reset                                      
+    $ bundle exec rake db:reset                                      
     $ rails server
     ```
   - Open tab with the link http://localhost:3000
